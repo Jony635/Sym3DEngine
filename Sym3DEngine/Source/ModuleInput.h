@@ -9,6 +9,6 @@ class ModuleInput : public Module
 private:
 	bool Start()
 	{
-		return false;
+		return true;
 	}
 };

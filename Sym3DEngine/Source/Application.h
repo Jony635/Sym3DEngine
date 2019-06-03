@@ -3,6 +3,8 @@
 #include <vector>
 
 class Module;
+class ModuleWindow;
+class ModuleRenderer;
 class ModuleInput;
 
 class Application
@@ -25,6 +27,8 @@ public:
 
 
 public:
+	ModuleWindow* window = nullptr;
+	ModuleRenderer* renderer = nullptr;
 	ModuleInput* input = nullptr;
 
 

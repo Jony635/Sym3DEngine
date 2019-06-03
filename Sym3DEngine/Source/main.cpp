@@ -1,11 +1,15 @@
 #include <iostream>
 #include <stdlib.h>
 
+#include "SDL/include/SDL.h"
+#pragma comment(lib, "SDL/SDL2main.lib")
+#pragma comment(lib, "SDL/SDL2.lib")
+
 #include "Application.h"
 
 Application* App;
 
-int main(int argc, char* argv[]) 
+int main(int argc, char* argv[])
 { 
 	App = new Application();
 
