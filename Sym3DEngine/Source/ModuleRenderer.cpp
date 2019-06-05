@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "ModuleWindow.h"
 #include "ModuleRenderer.h"
+#include "ModuleImGUI.h"
 
 #include "SDL/include/SDL.h"
 #include "Glew/include/GL/glew.h"
@@ -115,6 +116,8 @@ bool ModuleRenderer::PostUpdate()
 	//Render
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
+
+	App->imgui->Draw();
 
 	SDL_GL_SwapWindow((SDL_Window*)App->window->GetWindow());
 

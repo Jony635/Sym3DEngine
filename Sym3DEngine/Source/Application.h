@@ -6,6 +6,7 @@ class Module;
 class ModuleWindow;
 class ModuleRenderer;
 class ModuleInput;
+class ModuleImGUI;
 
 class Application
 {
@@ -34,7 +35,7 @@ public:
 	ModuleWindow* window = nullptr;
 	ModuleRenderer* renderer = nullptr;
 	ModuleInput* input = nullptr;
-
+	ModuleImGUI* imgui = nullptr;
 
 private:
 	AppState state;

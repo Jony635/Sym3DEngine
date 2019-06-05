@@ -4,15 +4,18 @@
 #include "ModuleWindow.h"
 #include "ModuleRenderer.h"
 #include "ModuleInput.h"
+#include "ModuleImGUI.h"
 
 Application::Application()
 {
 	window = new ModuleWindow();
 	renderer = new ModuleRenderer();
 	input = new ModuleInput();
+	imgui = new ModuleImGUI();
 
 	modules.push_back(input);
 	modules.push_back(window);
+	modules.push_back(imgui);
 	modules.push_back(renderer);
 
 	state = AppState::START;

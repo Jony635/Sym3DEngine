@@ -19,6 +19,12 @@
     <Filter Include="Archivos de origen\SDL">
       <UniqueIdentifier>{81437315-00f3-4e71-b286-95cea83bd817}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\ImGUI">
+      <UniqueIdentifier>{cb86c57e-ea36-47a6-a009-56ae83881d1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Panels">
+      <UniqueIdentifier>{e998184a-b183-44f2-95d1-f6dc44804f6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
@@ -35,6 +41,30 @@
     </ClCompile>
     <ClCompile Include="ModuleWindow.cpp">
       <Filter>Archivos de recursos\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleImGUI.cpp">
+      <Filter>Archivos de recursos\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui_demo.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui_draw.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui_widgets.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui_impl_opengl3.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui_impl_sdl.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelHierarchy.cpp">
+      <Filter>Archivos de recursos\Panels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +337,39 @@
     </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleImGUI.h">
+      <Filter>Archivos de recursos\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imconfig.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imgui.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imgui_internal.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imstb_rectpack.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imstb_textedit.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imstb_truetype.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imgui_impl_opengl3.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imgui_impl_sdl.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelHierarchy.h">
+      <Filter>Archivos de recursos\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel.h">
+      <Filter>Archivos de recursos\Panels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

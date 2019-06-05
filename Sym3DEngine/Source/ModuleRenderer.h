@@ -10,6 +10,9 @@ private:
 	bool PostUpdate();
 
 public:
+	inline const void* GetContext() const { return context; }
+
+public:
 	bool vsync = true;
 
 private:
