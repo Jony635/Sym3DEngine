@@ -25,6 +25,10 @@ public:
 	Application();
 	bool Start();
 	bool Update();
+	bool CleanUp();
+
+public:
+	inline void FinishApp() { state = AppState::FINISH; }
 
 public:
 	ModuleWindow* window = nullptr;
@@ -34,7 +38,6 @@ public:
 
 private:
 	AppState state;
-
 	std::vector<Module*> modules;
 };
 

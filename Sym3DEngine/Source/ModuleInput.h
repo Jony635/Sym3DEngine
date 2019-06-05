@@ -7,8 +7,7 @@
 class ModuleInput : public Module
 {
 private:
-	bool Start()
-	{
-		return true;
-	}
+	bool Init();
+	bool PreUpdate();
+
 };

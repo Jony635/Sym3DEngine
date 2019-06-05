@@ -62,3 +62,18 @@ bool Application::Update()
 	else
 		return false;
 }
+
+bool Application::CleanUp()
+{
+	bool ret = true;
+
+	for (int i = modules.size() - 1; i >= 0 && ret; --i)
+	{
+		ret = modules[i]->CleanUp();
+	}
+
+	if (ret)
+		return true;
+	else
+		return false;
+}

@@ -33,11 +33,13 @@ int main(int argc, char* argv[])
 				bool ret = App->Update();
 				if (!ret)
 					App->state = Application::AppState::FINISH_ERROR;
-				
+
 				break;
 			}
 		}
 	}
+
+	App->CleanUp();
 
 	if (App->state == Application::AppState::FINISH)
 		return 0;
