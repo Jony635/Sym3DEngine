@@ -2,15 +2,18 @@
 
 #include "Module.h"
 
-struct SDL_Renderer;
-
 class ModuleRenderer : public Module
 {
 private:
 	bool Init();
 	bool Start();
+	bool PostUpdate();
 
+public:
+	bool vsync = true;
 
 private:
-	SDL_Renderer* renderer = nullptr;
+	void* context = 0u;
+
+
 };

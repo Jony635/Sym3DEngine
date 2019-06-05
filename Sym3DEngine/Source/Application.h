@@ -24,7 +24,7 @@ class Application
 public:
 	Application();
 	bool Start();
-
+	bool Update();
 
 public:
 	ModuleWindow* window = nullptr;

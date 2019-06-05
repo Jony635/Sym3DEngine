@@ -305,6 +305,9 @@
     <ClInclude Include="ModuleWindow.h">
       <Filter>Archivos de recursos\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Source\SDL\include\SDL_config.h.cmake">

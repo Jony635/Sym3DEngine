@@ -37,3 +37,28 @@ bool Application::Start()
 	else
 		return false;
 }
+
+bool Application::Update()
+{
+	bool ret = true;
+
+	for (int i = 0; i < modules.size() && ret; ++i)
+	{
+		ret = modules[i]->PreUpdate();
+	}
+
+	for (int i = 0; i < modules.size() && ret; ++i)
+	{
+		ret = modules[i]->Update();
+	}
+
+	for (int i = 0; i < modules.size() && ret; ++i)
+	{
+		ret = modules[i]->PostUpdate();
+	}
+
+	if (ret)
+		return true;
+	else
+		return false;
+}

@@ -30,6 +30,10 @@ int main(int argc, char* argv[])
 			}
 			case Application::AppState::UPDATE:
 			{
+				bool ret = App->Update();
+				if (!ret)
+					App->state = Application::AppState::FINISH_ERROR;
+				
 				break;
 			}
 		}
