@@ -10,7 +10,7 @@ bool ModuleWindow::Init()
 	flags |= SDL_WINDOW_RESIZABLE;
 	flags |= SDL_WINDOW_SHOWN;
 
-	window = SDL_CreateWindow("ExampleWindow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, flags);
+	window = SDL_CreateWindow("Sym3DEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, flags);
 
 	if (!window)
 	{
