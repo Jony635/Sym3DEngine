@@ -1,12 +1,15 @@
 #pragma once
 
 #include <vector>
+#include "Globals.h"
+#include <random>
 
 class Module;
 class ModuleWindow;
 class ModuleRenderer;
 class ModuleInput;
 class ModuleImGUI;
+class ModuleScene;
 
 class Application
 {
@@ -31,15 +34,20 @@ public:
 public:
 	inline void FinishApp() { state = AppState::FINISH; }
 
+	uint GetRandomUUID();
+
 public:
 	ModuleWindow* window = nullptr;
 	ModuleRenderer* renderer = nullptr;
 	ModuleInput* input = nullptr;
 	ModuleImGUI* imgui = nullptr;
+	ModuleScene* scene = nullptr;
 
 private:
 	AppState state;
 	std::vector<Module*> modules;
+
+	std::random_device rd;
 };
 
 extern Application* App;

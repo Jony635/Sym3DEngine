@@ -5,6 +5,7 @@
 #include "ModuleRenderer.h"
 #include "ModuleInput.h"
 #include "ModuleImGUI.h"
+#include "ModuleScene.h"
 
 Application::Application()
 {
@@ -12,9 +13,11 @@ Application::Application()
 	renderer = new ModuleRenderer();
 	input = new ModuleInput();
 	imgui = new ModuleImGUI();
+	scene = new ModuleScene();
 
 	modules.push_back(input);
 	modules.push_back(window);
+	modules.push_back(scene);
 	modules.push_back(imgui);
 	modules.push_back(renderer);
 
@@ -79,4 +82,14 @@ bool Application::CleanUp()
 		return true;
 	else
 		return false;
+}
+
+uint Application::GetRandomUUID()
+{
+	std::default_random_engine e1(rd());
+
+	std::uniform_int_distribution<uint32_t> uniform_dist(0, UINT32_MAX);
+	uint number = uniform_dist(e1);
+
+	return number;
 }
