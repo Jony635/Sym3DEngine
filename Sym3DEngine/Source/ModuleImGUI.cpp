@@ -9,6 +9,7 @@
 #include "ImGUI/include/imgui.h"
 #include "ImGUI/include/imgui_impl_sdl.h"
 #include "ImGUI/include/imgui_impl_opengl3.h"
+#include "ImGUI/include/imgui_internal.h"
 
 #include "Glew/include/GL/glew.h"
 
@@ -40,8 +41,22 @@ bool ModuleImGUI::PreUpdate()
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplSDL2_NewFrame((SDL_Window*)App->window->GetWindow());
 	ImGui::NewFrame();
+	
+	ImGui::BeginMainMenuBar();
 
-	ImGui::DockSpaceOverViewport(ImGui::GetMainViewport(), ImGuiDockNodeFlags_NoDockingInCentralNode | ImGuiDockNodeFlags_PassthruCentralNode);
+	if (ImGui::BeginMenu("View"))
+	{
+		if (ImGui::MenuItem("Hierarchy"))
+		{
+			hierarchy->ToggleActive();
+		}
+
+		ImGui::EndMenu();
+	}
+
+	ImGui::EndMainMenuBar();
+
+	DockSpace();
 
 	for (Panel* panel : panels)
 	{
@@ -50,6 +65,37 @@ bool ModuleImGUI::PreUpdate()
 	}
 
 	return true;
+}
+
+void ModuleImGUI::DockSpace()
+{
+	ImGuiViewport* viewport = ImGui::GetMainViewport();
+
+	float y_offset = 20;
+
+	ImGui::SetNextWindowPos({ viewport->Pos.x, viewport->Pos.y + y_offset });
+	ImGui::SetNextWindowSize({ viewport->Size.x, viewport->Size.y - y_offset });
+	ImGui::SetNextWindowViewport(viewport->ID);
+
+	ImGuiWindowFlags host_window_flags = 0;
+	host_window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDocking;
+	host_window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+	host_window_flags |= ImGuiWindowFlags_NoBackground;
+
+	char label[32];
+	ImFormatString(label, IM_ARRAYSIZE(label), "DockSpaceViewport_%08X", viewport->ID);
+
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+	ImGui::Begin(label, NULL, host_window_flags);
+	ImGui::PopStyleVar(3);
+
+	ImGuiDockNodeFlags dockspace_flags = 0;
+
+	ImGuiID dockspace_id = ImGui::GetID("DockSpace");
+	ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags, nullptr);
+	ImGui::End();
 }
 
 void ModuleImGUI::NotifyEvent(SDL_Event event)

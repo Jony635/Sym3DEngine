@@ -14,9 +14,11 @@ public:
 	ModuleImGUI();
 
 private:
-
 	bool Start();
 	bool PreUpdate();
+
+private:
+	void DockSpace();
 
 public:
 	void NotifyEvent(SDL_Event event);
