@@ -11,6 +11,9 @@
 
 #pragma comment(lib, "Glew/libx86_rls/glew32.lib")
 
+#include "ImGUI/include/imgui.h"
+#include "ImGUI/include/imgui_impl_opengl3.h"
+
 bool ModuleRenderer::Init()
 {
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
@@ -101,6 +104,8 @@ bool ModuleRenderer::Init()
 	//}
 
 	//TODO: Get uniform and atributes locations etc
+
+	SDL_GL_MakeCurrent((SDL_Window*)App->window->GetWindow(), context);
 
 	return true;
 }

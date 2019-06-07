@@ -15,9 +15,8 @@ public:
 
 private:
 
-	bool Init();
+	bool Start();
 	bool PreUpdate();
-	bool PostUpdate();
 
 public:
 	void NotifyEvent(SDL_Event event);
