@@ -26,15 +26,23 @@ void OnHierarchyRightClick()
 	}
 }
 
-void DrawGameObjectsRecursive(GameObject* root)
+void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 {
 	for (GameObject* gameObject : root->childs)
 	{
 		ImGuiTreeNodeFlags flags = 0;
 		if (gameObject->childs.empty())
 			flags |= ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Leaf;
+		if (gameObject->selected)
+			flags |= ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Selected;
 
-		if(ImGui::TreeNodeEx((gameObject->GetName() + std::string("##") + std::to_string(gameObject->GetUUID())).data(), flags))
+		bool treeopened = ImGui::TreeNodeEx((gameObject->GetName() + std::string("##") + std::to_string(gameObject->GetUUID())).data(), flags);
+		if (ImGui::IsItemClicked(0))
+		{
+			App->scene->GameObjectClicked(gameObject);
+		}
+
+		if(treeopened)
 		{
 			DrawGameObjectsRecursive(gameObject);
 			ImGui::TreePop();

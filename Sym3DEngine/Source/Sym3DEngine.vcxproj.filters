@@ -28,6 +28,9 @@
     <Filter Include="Archivos de recursos\GameObject System">
       <UniqueIdentifier>{5614d0ec-513a-4db1-9a0d-42310478247c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Containers">
+      <UniqueIdentifier>{fa5089ba-eae0-4566-b243-39592778df33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="PanelInspector.cpp">
       <Filter>Archivos de recursos\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGUI\include\imgui_stdlib.cpp">
+      <Filter>Archivos de origen\ImGUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +397,12 @@
     </ClInclude>
     <ClInclude Include="PanelInspector.h">
       <Filter>Archivos de recursos\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="Selection.h">
+      <Filter>Archivos de recursos\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGUI\include\imgui_stdlib.h">
+      <Filter>Archivos de origen\ImGUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,9 @@
 
 class GameObject
 {
+	friend class ModuleScene;
+	friend class PanelHierarchy;
+
 public:
 	GameObject();
 
@@ -19,6 +22,8 @@ public:
 
 	inline uint GetUUID() { return UUID; }
 
+	void OnInspector();
+
 public:
 	std::vector<GameObject*> childs;
 
@@ -27,4 +32,5 @@ private:
 	bool active = true;
 	bool static_go = false;
 	uint UUID = 0u;
+	bool selected = false;
 };
