@@ -75,6 +75,9 @@
     <ClCompile Include="ModuleScene.cpp">
       <Filter>Archivos de recursos\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="PanelInspector.cpp">
+      <Filter>Archivos de recursos\Panels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Application.h">
@@ -385,6 +388,9 @@
     </ClInclude>
     <ClInclude Include="ModuleScene.h">
       <Filter>Archivos de recursos\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelInspector.h">
+      <Filter>Archivos de recursos\Panels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

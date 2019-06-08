@@ -19,8 +19,11 @@ public:
 
 	inline uint GetUUID() { return UUID; }
 
+public:
+	std::vector<GameObject*> childs;
+
 private:
-	std::string name;
+	std::string name = "GameObject";
 	bool active = true;
 	bool static_go = false;
 	uint UUID = 0u;

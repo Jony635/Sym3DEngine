@@ -4,6 +4,7 @@
 #include "ModuleRenderer.h"
 
 #include "PanelHierarchy.h"
+#include "PanelInspector.h"
 
 #include "SDL/include/SDL.h"
 #include "ImGUI/include/imgui.h"
@@ -17,6 +18,9 @@ ModuleImGUI::ModuleImGUI()
 {
 	hierarchy = new PanelHierarchy();
 	panels.push_back(hierarchy);
+
+	inspector = new PanelInspector();
+	panels.push_back(inspector);
 }
 
 bool ModuleImGUI::Start()
@@ -46,9 +50,14 @@ bool ModuleImGUI::PreUpdate()
 
 	if (ImGui::BeginMenu("View"))
 	{
-		if (ImGui::MenuItem("Hierarchy"))
+		if (ImGui::MenuItem("Hierarchy", "", hierarchy->active))
 		{
 			hierarchy->ToggleActive();
+		}
+
+		if (ImGui::MenuItem("Inspector", "", inspector->active))
+		{
+			inspector->ToggleActive();
 		}
 
 		ImGui::EndMenu();

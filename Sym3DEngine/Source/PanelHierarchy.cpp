@@ -8,6 +8,40 @@
 
 #include "GameObject.h"
 
+void OnHierarchyRightClick()
+{
+	if (ImGui::IsItemClicked(1))
+	{
+		ImGui::OpenPopup("HierarchyRightClicked");
+	}
+
+	if (ImGui::BeginPopup("HierarchyRightClicked"))
+	{
+		if (ImGui::MenuItem("Create Empty"))
+		{
+			App->scene->CreateGameObject();
+		}
+
+		ImGui::EndPopup();
+	}
+}
+
+void DrawGameObjectsRecursive(GameObject* root)
+{
+	for (GameObject* gameObject : root->childs)
+	{
+		ImGuiTreeNodeFlags flags = 0;
+		if (gameObject->childs.empty())
+			flags |= ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Leaf;
+
+		if(ImGui::TreeNodeEx((gameObject->GetName() + std::string("##") + std::to_string(gameObject->GetUUID())).data(), flags))
+		{
+			DrawGameObjectsRecursive(gameObject);
+			ImGui::TreePop();
+		}
+	}
+}
+
 void PanelHierarchy::Draw()
 {
 	ImGui::Begin("Hierarchy", &active);
@@ -22,36 +56,9 @@ void PanelHierarchy::Draw()
 	ImGui::Dummy(windowSize);
 	ImGui::SetCursorScreenPos(cursorPos);
 
-	if (ImGui::IsItemClicked(1))
-	{
-		ImGui::OpenPopup("Create GameObject Popup");
-	}
+	OnHierarchyRightClick();
 
-	if(ImGui::BeginPopup("Create GameObject Popup"))
-	{
-		if (ImGui::MenuItem("Create Empty"))
-		{
-			//TODO: Create an empty gameObject with a tranform
-
-			GameObject* gameObject = new GameObject();
-			gameObject->SetName(std::to_string(gameObject->GetUUID()));
-			App->scene->gameObjects.push_back(gameObject);
-		}
-
-		ImGui::EndPopup();
-	}
-
-	for (GameObject* gameObject : App->scene->gameObjects)
-	{
-		if (ImGui::TreeNode((gameObject->GetName() + std::string("##") + std::to_string(gameObject->GetUUID())).data()))
-		{
-			ImGui::TreePop();
-		}
-
-
-	}
-
-	ImGui::TextColored({ 1.0f, 1.0f, 0.0f, 1.0f }, "GameObjects coming soon...");
+	DrawGameObjectsRecursive(App->scene->root);
 
 	ImGui::End();
 }

@@ -12,6 +12,10 @@ public:
 
 	ModuleScene(bool createRoot = true);
 
+public:
+	GameObject* CreateGameObject();
+
+public:
 	GameObject* root = nullptr;
 
 	std::vector<GameObject*> gameObjects;
