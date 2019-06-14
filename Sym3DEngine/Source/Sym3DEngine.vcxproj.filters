@@ -90,137 +90,137 @@
     <ClCompile Include="ImGUI\include\imgui_stdlib.cpp">
       <Filter>Archivos de origen\ImGUI</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\AABB.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Capsule.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Circle.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Circle2D.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Frustum.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Line.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\LineSegment.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\LineSegment2D.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\OBB.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\PBVolume.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Plane.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Polygon.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Polyhedron.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Ray.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Sphere.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Triangle.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Triangle2D.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\TriangleMesh.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\BitOps.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Callstack.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float2.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float3.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float3x3.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float3x4.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4d.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4x4.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\grisu3.c">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\grisu3_cpp.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathFunc.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathLog.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathOps.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MiniFloat.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Polynomial.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Quat.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\SSEMath.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\TransformOps.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Time\Clock.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\GJK.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\GJK2D.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\Random\LCG.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\SAT.cpp">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClCompile>
     <ClCompile Include="ComponentTransform.cpp">
       <Filter>Archivos de recursos\GameObject System\Components</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
       <Filter>Archivos de recursos\GameObject System\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Time\Clock.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Algorithm\GJK.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Algorithm\GJK2D.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Algorithm\Random\LCG.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Algorithm\SAT.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\AABB.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Capsule.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Circle.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Circle2D.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Frustum.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Line.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\LineSegment.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\LineSegment2D.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\OBB.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\PBVolume.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Plane.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Polygon.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Polyhedron.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Ray.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Sphere.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Triangle.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\Triangle2D.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Geometry\TriangleMesh.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\BitOps.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\Callstack.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float2.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float3.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float3x3.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float3x4.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float4.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float4d.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\float4x4.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\grisu3.c">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\grisu3_cpp.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\MathFunc.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\MathLog.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\MathOps.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\MiniFloat.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\Polynomial.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\Quat.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\SSEMath.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MathGeoLib\include\Math\TransformOps.cpp">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -542,233 +542,233 @@
     <ClInclude Include="ImGUI\include\imgui_stdlib.h">
       <Filter>Archivos de origen\ImGUI</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\emscripten\library_system.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\AABB.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\AABB2D.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Capsule.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Circle.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Circle2D.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Frustum.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\GeometryAll.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\GeomType.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\HitInfo.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\KDTree.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Line.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\LineSegment.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\LineSegment2D.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\OBB.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\OBB2D.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\PBVolume.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Plane.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Polygon.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Polygon2DRef.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Polyhedron.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\QuadTree.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Ray.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Sphere.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Triangle.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\Triangle2D.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\TriangleMesh.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\assume.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\BitOps.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Callstack.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\FixedPoint.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float2.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float3.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float3x3.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float3x4.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4d.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4x4.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4x4_neon.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4x4_sse.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4_neon.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float4_sse.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\FloatCmp.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\grisu3.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\InclWindows.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathAll.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathConstants.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathFunc.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathLog.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathNamespace.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MathTypes.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MatrixProxy.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MiniFloat.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\MultiLineMacro.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\myassert.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Polynomial.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Quat.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\quat_simd.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Rect.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Reinterpret.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\simd.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\SSEMath.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\sse_mathfun.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Swap.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\TransformOps.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\vec2d.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Time\Clock.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\MathBuildConfig.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\MathGeoLib.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\MathGeoLibFwd.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\GJK.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\GJK2D.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\Random\LCG.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Algorithm\SAT.h">
-      <Filter>Archivos de origen\MathGeoLib</Filter>
-    </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Archivos de recursos\GameObject System\Components</Filter>
     </ClInclude>
     <ClInclude Include="ComponentTransform.h">
       <Filter>Archivos de recursos\GameObject System\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Time\Clock.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\MathBuildConfig.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\MathGeoLib.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\MathGeoLibFwd.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Algorithm\GJK.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Algorithm\GJK2D.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Algorithm\Random\LCG.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Algorithm\SAT.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\emscripten\library_system.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\AABB.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\AABB2D.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Capsule.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Circle.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Circle2D.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Frustum.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\GeometryAll.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\GeomType.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\HitInfo.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\KDTree.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Line.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\LineSegment.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\LineSegment2D.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\OBB.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\OBB2D.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\PBVolume.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Plane.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Polygon.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Polygon2DRef.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Polyhedron.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\QuadTree.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Ray.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Sphere.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Triangle.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\Triangle2D.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Geometry\TriangleMesh.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\assume.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\BitOps.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\Callstack.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\FixedPoint.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float2.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float3.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float3x3.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float3x4.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4d.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4x4.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4x4_neon.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4x4_sse.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4_neon.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\float4_sse.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\FloatCmp.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\grisu3.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\InclWindows.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MathAll.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MathConstants.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MathFunc.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MathLog.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MathNamespace.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MathTypes.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MatrixProxy.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MiniFloat.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\MultiLineMacro.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\myassert.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\Polynomial.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\Quat.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\quat_simd.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\Rect.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\Reinterpret.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\simd.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\SSEMath.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\sse_mathfun.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\Swap.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\TransformOps.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MathGeoLib\include\Math\vec2d.h">
+      <Filter>Archivos de origen\MathGeoLib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -778,25 +778,25 @@
     <None Include="..\Source\SDL\include\SDL_config.h.in">
       <Filter>Archivos de origen\SDL</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\KDTree.inl">
+    <None Include="MathGeoLib\include\Geometry\KDTree.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\QuadTree.inl">
+    <None Include="MathGeoLib\include\Geometry\QuadTree.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\TriangleMesh_IntersectRay_AVX.inl">
+    <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_AVX.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\TriangleMesh_IntersectRay_CPP.inl">
+    <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_CPP.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Geometry\TriangleMesh_IntersectRay_SSE.inl">
+    <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_SSE.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\float2.inl">
+    <None Include="MathGeoLib\include\Math\float2.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
-    <None Include="C:\Users\JONY6\Downloads\MathGeoLib-master\src\Math\Matrix.inl">
+    <None Include="MathGeoLib\include\Math\Matrix.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </None>
   </ItemGroup>

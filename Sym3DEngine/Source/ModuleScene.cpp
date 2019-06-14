@@ -38,11 +38,9 @@ bool ModuleScene::Update()
 						break;
 					}
 				}
-
 			}
 		}
 	}
-
 
 	return true;
 }

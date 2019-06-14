@@ -2,7 +2,7 @@
 #include <string>
 #include "assume.h"
 
-#if defined(WIN32) && defined(_MSC_VER) && !defined(WIN8RT)
+#if defined(_WIN32) && defined(_MSC_VER) && !defined(WIN8RT)
 
 #include "../Math/InclWindows.h"
 

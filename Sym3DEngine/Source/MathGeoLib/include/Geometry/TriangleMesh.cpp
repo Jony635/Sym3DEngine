@@ -25,7 +25,6 @@
 #include "../MathGeoLibFwd.h"
 #include "../Math/MathConstants.h"
 #include "../Math/myassert.h"
-#include "../../tests/SystemInfo.h"
 
 #include <vector>
 
@@ -52,7 +51,7 @@ enum SIMDCapability
 
 SIMDCapability DetectSIMDCapability()
 {
-#ifdef WIN32 ///\todo SIMD detection for other x86 platforms.
+#ifdef _WIN32 ///\todo SIMD detection for other x86 platforms.
 
 #ifdef MATH_SSE
 	int CPUInfo[4] = {-1};

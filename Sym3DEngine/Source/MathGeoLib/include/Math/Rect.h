@@ -20,7 +20,7 @@
 // Define this when building this project to make Rects be transformable to Win32 RECT() structs.
 // #define MATH_WIN32_INTEROP
 
-#if defined(WIN32) && defined(MATH_WIN32_INTEROP)
+#if defined(_WIN32) && defined(MATH_WIN32_INTEROP)
 #include "../Math/InclWindows.h"
 #endif
 
@@ -43,7 +43,7 @@ public:
 	int right;
 	int bottom;
 
-#if defined(WIN32) && defined(MATH_WIN32_INTEROP)
+#if defined(_WIN32) && defined(MATH_WIN32_INTEROP)
 	operator RECT()
 	{
 		RECT r;

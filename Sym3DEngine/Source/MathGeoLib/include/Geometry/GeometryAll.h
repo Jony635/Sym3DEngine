@@ -21,7 +21,7 @@
 #include "../MathBuildConfig.h"
 #include "../Math/MathNamespace.h"
 
-#if defined(WIN32) && defined(MATH_WIN32_INTEROP)
+#if defined(_WIN32) && defined(MATH_WIN32_INTEROP)
 #include "../Math/InclWindows.h"
 #endif
 

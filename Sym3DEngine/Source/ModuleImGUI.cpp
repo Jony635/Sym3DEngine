@@ -47,7 +47,7 @@ bool ModuleImGUI::PreUpdate()
 	ImGui::NewFrame();
 	
 	ImGui::BeginMainMenuBar();
-
+	
 	if (ImGui::BeginMenu("View"))
 	{
 		if (ImGui::MenuItem("Hierarchy", "", hierarchy->active))
@@ -64,7 +64,7 @@ bool ModuleImGUI::PreUpdate()
 	}
 
 	ImGui::EndMainMenuBar();
-
+	
 	DockSpace();
 
 	for (Panel* panel : panels)
@@ -86,10 +86,14 @@ void ModuleImGUI::DockSpace()
 	ImGui::SetNextWindowSize({ viewport->Size.x, viewport->Size.y - y_offset });
 	ImGui::SetNextWindowViewport(viewport->ID);
 
+	ImGuiDockNodeFlags dockspace_flags = 0;
+	dockspace_flags |= ImGuiDockNodeFlags_PassthruCentralNode;
+
 	ImGuiWindowFlags host_window_flags = 0;
 	host_window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDocking;
 	host_window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
-	host_window_flags |= ImGuiWindowFlags_NoBackground;
+	if (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode)
+		host_window_flags |= ImGuiWindowFlags_NoBackground;
 
 	char label[32];
 	ImFormatString(label, IM_ARRAYSIZE(label), "DockSpaceViewport_%08X", viewport->ID);
@@ -99,8 +103,6 @@ void ModuleImGUI::DockSpace()
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
 	ImGui::Begin(label, NULL, host_window_flags);
 	ImGui::PopStyleVar(3);
-
-	ImGuiDockNodeFlags dockspace_flags = 0;
 
 	ImGuiID dockspace_id = ImGui::GetID("DockSpace");
 	ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags, nullptr);

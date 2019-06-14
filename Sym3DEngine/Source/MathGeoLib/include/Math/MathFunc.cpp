@@ -30,7 +30,7 @@
 #include "grisu3.h"
 #endif
 
-#ifdef WIN32
+#ifdef _WIN32
 #include "../Math/InclWindows.h"
 #endif
 
@@ -57,7 +57,7 @@ bool AssumeFailed()
 {
 	if (mathBreakOnAssume)
 	{
-#if defined(WIN32) && !defined(WIN8RT) // Win8 metro apps don't have DebugBreak.
+#if defined(_WIN32) && !defined(WIN8RT) // Win8 metro apps don't have DebugBreak.
 		DebugBreak();
 #endif
 	}
