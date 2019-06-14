@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-#pragma comment(lib, "Glew/libx86_rls/glew32.lib")
+#pragma comment(lib, "Glew/libx64/glew32.lib")
 
 #include "ImGUI/include/imgui.h"
 #include "ImGUI/include/imgui_impl_opengl3.h"
