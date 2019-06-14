@@ -3,13 +3,17 @@
 #include <string>
 #include "Globals.h"
 
+#include "Component.h"
+
+class ComponentTransform;
+
 class GameObject
 {
 	friend class ModuleScene;
 	friend class PanelHierarchy;
 
 public:
-	GameObject();
+	GameObject(GameObject* parent = nullptr);
 
 	inline bool IsActive() { return active; }
 	inline void ToggleActive() { active = !active; }
@@ -24,8 +28,20 @@ public:
 
 	void OnInspector();
 
+	Component* AddComponent(ComponentType type);
+	void AddComponent(Component* component = nullptr);
+
+	void AddChild(GameObject* gameObject = nullptr);
+	void EraseChild(GameObject* child);
+
 public:
 	std::vector<GameObject*> childs;
+	std::vector<Component*> components;
+
+	GameObject* parent = nullptr;
+
+	//Quick Accessors
+	ComponentTransform* transform = nullptr;
 
 private:
 	std::string name = "GameObject";

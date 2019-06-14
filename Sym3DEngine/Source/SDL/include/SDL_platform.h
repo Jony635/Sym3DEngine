@@ -118,7 +118,7 @@
 #define __SOLARIS__ 1
 #endif
 
-#if defined(WIN32) || defined(_WIN32) || defined(__CYGWIN__) || defined(__MINGW32__)
+#if defined(_WIN32) || defined(_WIN32) || defined(__CYGWIN__) || defined(__MINGW32__)
 /* Try to find out if we're compiling for WinRT or non-WinRT */
 #if defined(_MSC_VER) && defined(__has_include)
 #if __has_include(<winapifamily.h>)
@@ -148,7 +148,7 @@
 #undef __WINDOWS__
 #define __WINDOWS__ 1
 #endif
-#endif /* defined(WIN32) || defined(_WIN32) || defined(__CYGWIN__) */
+#endif /* defined(_WIN32) || defined(_WIN32) || defined(__CYGWIN__) */
 
 #if defined(__WINDOWS__)
 #undef __WIN32__

@@ -26,6 +26,14 @@ void OnHierarchyRightClick()
 	}
 }
 
+void OnHierarchyDoubleClick()
+{
+	if (ImGui::IsItemClicked() && ImGui::IsMouseDoubleClicked(0))
+	{
+		App->scene->DeselectAll();
+	}
+}
+
 void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 {
 	for (GameObject* gameObject : root->childs)
@@ -39,7 +47,7 @@ void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 		bool treeopened = ImGui::TreeNodeEx((gameObject->GetName() + std::string("##") + std::to_string(gameObject->GetUUID())).data(), flags);
 		if (ImGui::IsItemClicked(0))
 		{
-			App->scene->GameObjectClicked(gameObject);
+			App->scene->GameObjectHierarchyClicked(gameObject);
 		}
 
 		if(treeopened)
@@ -64,6 +72,7 @@ void PanelHierarchy::Draw()
 	ImGui::Dummy(windowSize);
 	ImGui::SetCursorScreenPos(cursorPos);
 
+	OnHierarchyDoubleClick();
 	OnHierarchyRightClick();
 
 	DrawGameObjectsRecursive(App->scene->root);

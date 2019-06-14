@@ -10,12 +10,15 @@ class GameObject;
 class ModuleScene : public Module
 {
 public:
-
 	ModuleScene(bool createRoot = true);
+	bool Update();
 
 public:
 	GameObject* CreateGameObject();
-	void GameObjectClicked(GameObject* gameObject);
+	void GameObjectHierarchyClicked(GameObject* gameObject);
+	void DeselectAll();
+
+	void EraseGameObject(GameObject* gameObject);
 
 public:
 	GameObject* root = nullptr;

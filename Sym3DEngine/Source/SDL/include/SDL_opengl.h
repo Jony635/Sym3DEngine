@@ -107,7 +107,7 @@
 #elif (defined(__GNUC__) && __GNUC__ >= 4) || (defined(__SUNPRO_C) && (__SUNPRO_C >= 0x590))
 #  define GLAPI __attribute__((visibility("default")))
 #  define GLAPIENTRY
-#endif /* WIN32 && !CYGWIN */
+#endif /* _WIN32 && !CYGWIN */
 
 /*
  * WINDOWS: Include windows.h here to define APIENTRY.
