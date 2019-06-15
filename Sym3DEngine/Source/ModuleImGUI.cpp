@@ -5,6 +5,7 @@
 
 #include "PanelHierarchy.h"
 #include "PanelInspector.h"
+#include "PanelScene.h"
 
 #include "SDL/include/SDL.h"
 #include "ImGUI/include/imgui.h"
@@ -21,6 +22,9 @@ ModuleImGUI::ModuleImGUI()
 
 	inspector = new PanelInspector();
 	panels.push_back(inspector);
+
+	scene = new PanelScene();
+	panels.push_back(scene);
 }
 
 bool ModuleImGUI::Start()

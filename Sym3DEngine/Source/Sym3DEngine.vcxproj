@@ -80,6 +80,7 @@
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="PanelHierarchy.cpp" />
     <ClCompile Include="PanelInspector.cpp" />
+    <ClCompile Include="PanelScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Application.h" />
@@ -263,6 +264,7 @@
     <ClInclude Include="Panel.h" />
     <ClInclude Include="PanelHierarchy.h" />
     <ClInclude Include="PanelInspector.h" />
+    <ClInclude Include="PanelScene.h" />
     <ClInclude Include="Selection.h" />
   </ItemGroup>
   <ItemGroup>

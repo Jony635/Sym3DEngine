@@ -8,6 +8,7 @@ union SDL_Event;
 class Panel;
 class PanelHierarchy;
 class PanelInspector;
+class PanelScene;
 
 class ModuleImGUI : public Module
 {
@@ -28,6 +29,7 @@ public:
 private:
 	PanelHierarchy* hierarchy = nullptr;
 	PanelInspector* inspector = nullptr;
+	PanelScene* scene = nullptr;
 
 	std::vector<Panel*> panels;
 };

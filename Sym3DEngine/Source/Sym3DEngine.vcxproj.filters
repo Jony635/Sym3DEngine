@@ -222,6 +222,9 @@
     <ClCompile Include="MathGeoLib\include\Math\TransformOps.cpp">
       <Filter>Archivos de origen\MathGeoLib</Filter>
     </ClCompile>
+    <ClCompile Include="PanelScene.cpp">
+      <Filter>Archivos de recursos\Panels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Application.h">
@@ -769,6 +772,9 @@
     </ClInclude>
     <ClInclude Include="MathGeoLib\include\Math\vec2d.h">
       <Filter>Archivos de origen\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelScene.h">
+      <Filter>Archivos de recursos\Panels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

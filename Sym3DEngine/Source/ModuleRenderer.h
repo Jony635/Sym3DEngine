@@ -15,8 +15,12 @@ public:
 public:
 	bool vsync = true;
 
+	//Draw to texture stuff
+	uint FramebufferName = 0;
+	uint renderedTexture = 0;
+	uint depthrenderbuffer;
+
 private:
 	void* context = 0u;
-
 
 };
