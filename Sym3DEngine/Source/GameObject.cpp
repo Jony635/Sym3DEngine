@@ -11,7 +11,7 @@ GameObject::GameObject(GameObject* parent) : parent(parent)
 {
 	UUID = App->GetRandomUUID();
 
-	transform = new ComponentTransform();
+	transform = new ComponentTransform(this);
 	components.push_back(transform);
 }
 

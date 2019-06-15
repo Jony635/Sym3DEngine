@@ -11,13 +11,16 @@ enum class ComponentType
 
 };
 
+class GameObject;
+
 class Component
 {
 public:
-	Component();
+	Component(GameObject* gameObject);
 
 	virtual void OnInspector() {}
 
 protected:
 	uint UUID = 0u;
+	GameObject* gameObject = nullptr;
 };

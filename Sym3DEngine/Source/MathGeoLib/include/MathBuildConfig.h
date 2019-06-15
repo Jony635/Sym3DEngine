@@ -109,7 +109,7 @@
 #endif
 // If MATH_USE_OPENGL is defined, the Frustum class defaults to creating Frustums with projectiveSpace = FrustumSpaceGL.
 #ifndef MATH_USE_OPENGL
-//#define MATH_USE_OPENGL
+#define MATH_USE_OPENGL
 #endif
 
 // If MATH_LEFTHANDED_CAMERA is defined, the Frustum class defaults to creating Frustums with handedness = FrustumLeftHanded.
