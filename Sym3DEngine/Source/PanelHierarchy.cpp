@@ -7,6 +7,7 @@
 #include "ImGUI/include/imgui_internal.h"
 
 #include "GameObject.h"
+#include "ComponentTransform.h"
 
 void OnHierarchyRightClick()
 {
@@ -82,6 +83,46 @@ void OnGameObjectReorder(GameObject* root, int childIndex)
 	}
 }
 
+void OnGameObjectDropped(GameObject* root, int childIndex)
+{
+	if (ImGui::BeginDragDropTarget())
+	{
+		ImGui::PushStyleColor(ImGuiCol_DragDropTarget, { 0.5f, 0.8f, 0.9f, 1.0f });
+		const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("GAMEOBJECT", ImGuiDragDropFlags_AcceptBeforeDelivery);
+		ImGui::PopStyleColor();
+
+		if (payload != nullptr && ImGui::IsMouseReleased(0))
+		{
+			GameObject* child = root->childs[childIndex];
+			GameObject* dragged = *(GameObject**)payload->Data;
+			
+			std::vector<GameObject*>::iterator iterator = std::find(child->childs.begin(), child->childs.end(), dragged);
+			if (iterator != child->childs.end())
+			{
+				//Dragged was already a child, send it to the back of the vector.
+
+				child->EraseChild(dragged);
+				child->AddChild(dragged);
+			}
+			else
+			{
+				if (dragged != child->parent)
+				{
+					//New child. Change parents, update locals.
+
+					dragged->parent->EraseChild(dragged);
+					child->AddChild(dragged);
+				}		
+				else
+				{
+					//Dont drag the parent into the child, that is weird
+				}
+			}
+		}
+		ImGui::EndDragDropTarget();
+	}
+}
+
 void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 {
 	for (int i = 0; i < root->childs.size(); ++i)
@@ -93,6 +134,8 @@ void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 			flags |= ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Leaf;
 		if (gameObject->selected)
 			flags |= ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Selected;
+
+		flags |= ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_OpenOnArrow;
 
 		bool treeopened = ImGui::TreeNodeEx((gameObject->GetName() + std::string("##") + std::to_string(gameObject->GetUUID())).data(), flags);
 
@@ -110,6 +153,8 @@ void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 		{
 			App->scene->GameObjectHierarchyClicked(gameObject);
 		}
+
+		OnGameObjectDropped(root, i);
 
 		OnGameObjectReorder(root, i);
 
@@ -170,7 +215,14 @@ void PanelHierarchy::Draw()
 				}
 				else
 				{
-					//Change parents
+					if (ImGui::IsMouseReleased(0))
+					{
+						dragged->parent->EraseChild(dragged);
+						App->scene->root->AddChild(dragged);
+
+						if (dragged->transform)
+							dragged->transform->UpdateMatricesFromGlobal();
+					}
 				}
 			}
 		}

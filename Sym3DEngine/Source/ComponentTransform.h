@@ -11,8 +11,9 @@ public:
 	ComponentTransform(GameObject* gameObject);
 	void OnInspector();
 
-private:
-	void UpdateMatrices();
+public:
+	void UpdateMatricesFromLocal();
+	void UpdateMatricesFromGlobal();
 
 protected:
 	math::float3 position, scale;

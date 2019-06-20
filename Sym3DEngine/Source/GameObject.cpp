@@ -38,20 +38,23 @@ Component* GameObject::AddComponent(ComponentType type)
 	return nullptr;
 }
 
-void GameObject::AddChild(GameObject* gameObject)
+void GameObject::AddChild(GameObject* child)
 {
+	if(child->parent)
+		child->parent->EraseChild(child);
+	child->parent = this;
+	childs.push_back(child);
 
+	if (child->transform)
+		child->transform->UpdateMatricesFromGlobal();
 }
 
 void GameObject::EraseChild(GameObject* child)
 {
-	for (int i = 0; i < childs.size(); ++i)
+	std::vector<GameObject*>::iterator iterator = std::find(childs.begin(), childs.end(), child);
+	if (iterator != childs.end())
 	{
-		if (childs[i] == child)
-		{
-			childs.erase(childs.begin() + i);
-			return;
-		}
+		childs.erase(iterator);
 	}
 }
 

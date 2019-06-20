@@ -30,7 +30,7 @@ void ComponentTransform::OnInspector()
 			rotation = math::Quat::identity; 
 			scale =  math::float3::one;
 
-			UpdateMatrices();
+			UpdateMatricesFromLocal();
 		}
 
 		ImGui::NewLine();
@@ -38,7 +38,7 @@ void ComponentTransform::OnInspector()
 		ImGui::Text("Position: ");
 		if (ImGui::DragFloat3((std::string("##Position") + std::to_string(UUID)).data(), position.ptr()))
 		{
-			UpdateMatrices();
+			UpdateMatricesFromLocal();
 		}
 
 		ImGui::Text("Rotation: ");
@@ -56,19 +56,19 @@ void ComponentTransform::OnInspector()
 			{
 				rotation.SetFromAxisAngle(rotationAxis.Normalized(), math::DegToRad(rotationAxis.Length()));
 
-				UpdateMatrices();
+				UpdateMatricesFromLocal();
 			}
 		}
 
 		ImGui::Text("Scale: ");
 		if (ImGui::DragFloat3((std::string("##Scale") + std::to_string(UUID)).data(), scale.ptr()))
 		{
-			UpdateMatrices();
+			UpdateMatricesFromLocal();
 		}
 	}
 }
 
-void ComponentTransform::UpdateMatrices()
+void ComponentTransform::UpdateMatricesFromLocal()
 {
 	localMatrix = math::float4x4::FromTRS(position, rotation, scale);
 	globalMatrix = localMatrix;
@@ -79,6 +79,18 @@ void ComponentTransform::UpdateMatrices()
 	for (GameObject* child : gameObject->childs)
 	{
 		if (child->transform)
-			child->transform->UpdateMatrices();
+			child->transform->UpdateMatricesFromLocal();
+	}
+}
+
+void ComponentTransform::UpdateMatricesFromGlobal()
+{
+	localMatrix = gameObject->parent->transform->globalMatrix.Inverted() * globalMatrix;
+	localMatrix.Decompose(position, rotation, scale);
+
+	for (GameObject* child : gameObject->childs)
+	{
+		if (child->transform)
+			child->transform->UpdateMatricesFromGlobal();
 	}
 }
