@@ -58,6 +58,19 @@ void GameObject::EraseChild(GameObject* child)
 	}
 }
 
+void GameObject::SetParent(GameObject* newParent)
+{
+	if (!newParent)
+		return;
+
+	newParent->childs.push_back(this);
+	parent->EraseChild(this);
+	parent = newParent;
+
+	if (transform)
+		transform->UpdateMatricesFromGlobal();
+}
+
 void GameObject::AddComponent(Component* component)
 {
 

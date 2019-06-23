@@ -34,6 +34,8 @@ public:
 	void AddChild(GameObject* gameObject = nullptr);
 	void EraseChild(GameObject* child);
 
+	void SetParent(GameObject* newParent);
+
 public:
 	std::vector<GameObject*> childs;
 	std::vector<Component*> components;

@@ -40,7 +40,8 @@ void OnGameObjectReorder(GameObject* root, int childIndex)
 	//The dummy under this gameObject to drag and drop
 	ImVec2 cursorPos = ImGui::GetCursorScreenPos();
 	ImVec2 windowSize = ImGui::GetWindowSize();
-	ImGui::Dummy({ windowSize.x, 4 });
+	ImGui::SetCursorScreenPos({cursorPos.x, cursorPos.y - 2});
+	ImGui::Dummy({ windowSize.x, 2 });
 	ImGui::SetCursorScreenPos(cursorPos);
 
 	GameObject* child = root->childs[childIndex];
@@ -58,24 +59,17 @@ void OnGameObjectReorder(GameObject* root, int childIndex)
 				ImDrawList* drawList = ImGui::GetWindowDrawList();
 				drawList->AddLine({ cursorPos.x, cursorPos.y - 3 }, { cursorPos.x + windowSize.x - 3, cursorPos.y - 3 }, ImGui::ColorConvertFloat4ToU32({ 0.5f, 0.8f, 0.9f, 1.0f }), 3.0f);
 
-				if (dragged->parent == child->parent)
+				if (ImGui::IsMouseReleased(0))
 				{
-					//Both are brothers, only reorder the vector
+					if (dragged->parent != child->parent)
+						child->parent->AddChild(dragged);
 
-					if (ImGui::IsMouseReleased(0))
-					{
-						std::vector<GameObject*>& childs = dragged->parent->childs;
-						uint draggedIndex = std::find(childs.begin(), childs.end(), dragged) - childs.begin();
+					std::vector<GameObject*>& childs = dragged->parent->childs;
+					uint draggedIndex = std::find(childs.begin(), childs.end(), dragged) - childs.begin();
 
-						childs.erase(dragged->parent->childs.begin() + draggedIndex);
-						childs.insert(childs.begin() + (draggedIndex > childIndex ? childIndex + 1 : childIndex), dragged);
-					}
-				}
-				else
-				{
-					//Change parents, update matrices etc
-				}
-
+					childs.erase(dragged->parent->childs.begin() + draggedIndex);
+					childs.insert(childs.begin() + (draggedIndex > childIndex ? childIndex + 1 : childIndex), dragged);
+				}							
 			}
 		}
 
@@ -85,6 +79,11 @@ void OnGameObjectReorder(GameObject* root, int childIndex)
 
 void OnGameObjectDropped(GameObject* root, int childIndex)
 {
+	//ImVec2 cursorPos = ImGui::GetCursorScreenPos();
+	//ImGui::SetCursorScreenPos({ cursorPos.x, cursorPos.y - 15 });
+	//ImVec2 windowSize = ImGui::GetWindowSize();
+	//ImGui::Dummy({ windowSize.x, 10 });
+
 	if (ImGui::BeginDragDropTarget())
 	{
 		ImGui::PushStyleColor(ImGuiCol_DragDropTarget, { 0.5f, 0.8f, 0.9f, 1.0f });
@@ -123,6 +122,22 @@ void OnGameObjectDropped(GameObject* root, int childIndex)
 	}
 }
 
+void OnHierarchyGameObjectDropped()
+{
+	if (ImGui::BeginDragDropTarget())
+	{
+		const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("GAMEOBJECT", ImGuiDragDropFlags_AcceptNoDrawDefaultRect /*| ImGuiDragDropFlags_AcceptBeforeDelivery*/);
+		if (payload != nullptr)
+		{
+			//Reorder, check parents, etc.
+
+			GameObject* dragged = *(GameObject * *)payload->Data;
+			App->scene->root->AddChild(dragged);
+		}
+		ImGui::EndDragDropTarget();
+	}
+}
+
 void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 {
 	for (int i = 0; i < root->childs.size(); ++i)
@@ -155,7 +170,6 @@ void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 		}
 
 		OnGameObjectDropped(root, i);
-
 		OnGameObjectReorder(root, i);
 
 		if(treeopened)
@@ -182,6 +196,7 @@ void PanelHierarchy::Draw()
 
 	OnHierarchyDoubleClick();
 	OnHierarchyRightClick();
+	OnHierarchyGameObjectDropped();
 
 	//THE TOP DUMMY OF THE HIERARCHY
 	cursorPos = ImGui::GetCursorScreenPos();
