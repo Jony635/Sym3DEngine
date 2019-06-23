@@ -15,6 +15,12 @@ public:
 	void UpdateMatricesFromLocal();
 	void UpdateMatricesFromGlobal();
 
+	inline math::float3 GetPosition() const { return position; }
+	inline math::Quat GetRotation() const { return rotation; }
+	inline math::float3 GetScale() const { return scale; }
+
+	inline math::float4x4 GetGlobalMatrix() const { return globalMatrix; }
+
 protected:
 	math::float3 position, scale;
 	math::Quat rotation;
