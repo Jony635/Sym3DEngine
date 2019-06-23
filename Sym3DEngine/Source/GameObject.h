@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
+
 #include "Globals.h"
 
 #include "Component.h"
