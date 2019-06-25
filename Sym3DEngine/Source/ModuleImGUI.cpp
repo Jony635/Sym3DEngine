@@ -63,6 +63,11 @@ bool ModuleImGUI::PreUpdate()
 		{
 			inspector->ToggleActive();
 		}
+		
+		if (ImGui::MenuItem("Scene", "", scene->active))
+		{
+			scene->ToggleActive();
+		}
 
 		ImGui::EndMenu();
 	}
