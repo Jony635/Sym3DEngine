@@ -25,6 +25,8 @@
     <ClCompile Include="..\Source\ModuleRenderer.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentCamera.cpp" />
+    <ClCompile Include="ComponentMeshRenderer.cpp" />
+    <ClCompile Include="ComponentRenderer.cpp" />
     <ClCompile Include="ComponentTransform.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="ImGUI\include\imgui.cpp" />
@@ -174,6 +176,8 @@
     <ClInclude Include="..\Source\SDL\include\SDL_vulkan.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentCamera.h" />
+    <ClInclude Include="ComponentMeshRenderer.h" />
+    <ClInclude Include="ComponentRenderer.h" />
     <ClInclude Include="ComponentTransform.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Globals.h" />

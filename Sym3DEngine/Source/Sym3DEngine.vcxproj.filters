@@ -37,6 +37,9 @@
     <Filter Include="Archivos de recursos\GameObject System\Components">
       <UniqueIdentifier>{b1d25467-14db-4a69-9d37-1b4e276452b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\GameObject System\Components\Renderers">
+      <UniqueIdentifier>{2f923d21-a1fd-46f1-b4d1-48d2f6fce004}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
@@ -227,6 +230,12 @@
     </ClCompile>
     <ClCompile Include="ComponentCamera.cpp">
       <Filter>Archivos de recursos\GameObject System\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentRenderer.cpp">
+      <Filter>Archivos de recursos\GameObject System\Components\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentMeshRenderer.cpp">
+      <Filter>Archivos de recursos\GameObject System\Components\Renderers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -781,6 +790,12 @@
     </ClInclude>
     <ClInclude Include="ComponentCamera.h">
       <Filter>Archivos de recursos\GameObject System\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentRenderer.h">
+      <Filter>Archivos de recursos\GameObject System\Components\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentMeshRenderer.h">
+      <Filter>Archivos de recursos\GameObject System\Components\Renderers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
