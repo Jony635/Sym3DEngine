@@ -20,6 +20,9 @@ public:
 	uint renderedTexture = 0;
 	uint depthrenderbuffer;
 
+	//Shader stuff
+	uint shaderProgram = 0u;
+
 private:
 	void* context = 0u;
 

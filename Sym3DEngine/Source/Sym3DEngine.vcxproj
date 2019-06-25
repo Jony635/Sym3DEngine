@@ -276,6 +276,7 @@
   <ItemGroup>
     <None Include="..\Source\SDL\include\SDL_config.h.cmake" />
     <None Include="..\Source\SDL\include\SDL_config.h.in" />
+    <None Include="DefaultShader.h" />
     <None Include="MathGeoLib\include\Geometry\KDTree.inl" />
     <None Include="MathGeoLib\include\Geometry\QuadTree.inl" />
     <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_AVX.inl" />

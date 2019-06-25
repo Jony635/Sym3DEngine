@@ -3,6 +3,8 @@
 #include "ModuleRenderer.h"
 #include "ModuleImGUI.h"
 
+#include "ComponentMeshRenderer.h"
+
 #include "SDL/include/SDL.h"
 #include "Glew/include/GL/glew.h"
 #include "SDL/include/SDL_opengl.h"
@@ -13,6 +15,8 @@
 
 #include "ImGUI/include/imgui.h"
 #include "ImGUI/include/imgui_impl_opengl3.h"
+
+#include "DefaultShader.h"
 
 bool ModuleRenderer::Init()
 {
@@ -54,58 +58,57 @@ bool ModuleRenderer::Init()
 		}
 	}
 
-	//GLuint program = glCreateProgram();
-
-	//GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	//const GLchar* vertexShaderSource[] = { "#version 140\nin vec2 LVertexPos2D; void main() { gl_Position = vec4( LVertexPos2D.x, LVertexPos2D.y, 0, 1 ); }" };
-	//glShaderSource(vertexShader, 1, vertexShaderSource, NULL);
-	//glCompileShader(vertexShader);
-
-	//GLint vShaderCompiled = GL_FALSE; 
-	//glGetShaderiv( vertexShader, GL_COMPILE_STATUS, &vShaderCompiled ); 
-	//if( vShaderCompiled != GL_TRUE ) 
-	//{ 
-	//	std::cout<<"Unable to compile vertex shader " << vertexShader << std::endl; 
-
-	//	//TODO: GET ERRORS AT STRING AND LOG THEM
-
-	//	return false;
-	//}
-
-	//glAttachShader(program, vertexShader);
-
-	//GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	//const GLchar* fragmentShaderSource[] = { "#version 140\nout vec4 LFragment; void main() { LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); }" };
-	//glShaderSource(fragmentShader, 1, fragmentShaderSource, NULL);
-	//glCompileShader(fragmentShader);
-
-	//GLint fShaderCompiled = GL_FALSE; 
-	//glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &fShaderCompiled); 
-	//if (fShaderCompiled != GL_TRUE) 
-	//{ 
-	//	std::cout<< "Unable to compile fragment shader " << fragmentShader << std::endl; 
-
-	//	//TODO: GET ERRORS AT STRING AND LOG THEM
-
-	//	return false;
-	//}
-	//
-	//glAttachShader(program, fragmentShader); 
-	//glLinkProgram( program ); 
-	//GLint programSuccess = GL_TRUE; 
-	//glGetProgramiv( program, GL_LINK_STATUS, &programSuccess ); 
-	//if( programSuccess != GL_TRUE ) 
-	//{ 
-	//	std::cout << "Error linking program " << program << std::endl;
-
-	//	//TODO: GET ERRORS AT STRING AND LOG THEM
-
-	//	return false;
-	//}
-
-	//TODO: Get uniform and atributes locations etc
-
 	SDL_GL_MakeCurrent((SDL_Window*)App->window->GetWindow(), context);
+
+	//DEFAULT SHADER PROGRAM
+
+	ComponentMeshRenderer::InitializeShapesData();
+	shaderProgram = glCreateProgram();
+
+	//VERTEX SHADER
+	uint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	const char* source = DEFAULT_VS;
+	glShaderSource(vertexShader, 1, &source, NULL);
+	glCompileShader(vertexShader);
+
+	int  success;
+	char infoLog[512];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+
+	if (!success)
+	{
+		//VERTEX SHADER HAS COMPILE-TIME ERRORS!
+		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog); //TODO: LOG THIS INTO THE CONSOLE.
+		return false;
+	}
+
+	//FRAGMENT SHADER
+	uint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	source = DEFAULT_FS;
+	glShaderSource(fragmentShader, 1, &source, NULL);
+	glCompileShader(fragmentShader);
+	
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+
+	if (!success)
+	{
+		//FRAGMENT SHADER HAS COMPILE-TIME ERRORS!
+		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog); //TODO: LOG THIS INTO THE CONSOLE.
+		return false;
+	}
+
+	//ATTACH THE SHADERS TO THE PROGRAM
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+
+	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+	if (!success) 
+	{
+		//SHADER PROGRAM FAILED WHILE LINKING!
+		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog); //TODO: LOG THIS INTO THE CONSOLE.
+		return false;
+	}
 
 	return true;
 }
@@ -152,6 +155,8 @@ bool ModuleRenderer::PostUpdate()
 
 	glClearColor(0.5f, 0.8f, 0.9f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
+
+	//TODO: ITERATE OVER ALL THE RENDERER COMPONENTS IN ORDER TO DRAW THEIR STUFF
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 

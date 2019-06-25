@@ -40,6 +40,9 @@
     <Filter Include="Archivos de recursos\GameObject System\Components\Renderers">
       <UniqueIdentifier>{2f923d21-a1fd-46f1-b4d1-48d2f6fce004}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Shaders">
+      <UniqueIdentifier>{b7221750-8c62-4047-a7e5-35d08fa68265}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
@@ -825,6 +828,9 @@
     </None>
     <None Include="MathGeoLib\include\Math\Matrix.inl">
       <Filter>Archivos de origen\MathGeoLib</Filter>
+    </None>
+    <None Include="DefaultShader.h">
+      <Filter>Archivos de recursos\Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>
