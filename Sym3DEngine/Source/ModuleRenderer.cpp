@@ -153,7 +153,8 @@ bool ModuleRenderer::PostUpdate()
 	//Render the scene ------------------
 	glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
 
-	glClearColor(0.5f, 0.8f, 0.9f, 1.0f);
+	//glClearColor(0.5f, 0.8f, 0.9f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	for (ComponentRenderer* renderer : renderers)

@@ -1,6 +1,11 @@
+#include "Application.h"
+#include "ModuleRenderer.h"
+
 #include "ComponentMeshRenderer.h"
+
 #include "Glew/include/GL/glew.h"
 #include "ImGUI/include/imgui.h"
+#include "MathGeoLib/include/Math/float4x4.h"
 
 #include <string>
 
@@ -61,7 +66,34 @@ void ComponentMeshRenderer::InitializeShapesData()
 
 void ComponentMeshRenderer::Render()
 {
-	//TODO: USE PROGRAM, SET ATTRIBUTES, AND RESET USE PROGRAM
+	glUseProgram(App->renderer->shaderProgram);
+
+	/*uint pMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "projectionMatrix");
+
+	glUniformMatrix4fv(pMatrixLoc, 1, GL_FALSE, math::float4x4::identity.ptr());
+
+	uint mvMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "modelViewMatrix");
+	glUniformMatrix4fv(mvMatrixLoc, 1, GL_FALSE, math::float4x4::identity.ptr());
+	*/
+
+	//VERTEX POSITIONS
+
+	uint vPositionLoc = glGetAttribLocation(App->renderer->shaderProgram, "vertexPosition");
+
+	glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::cubeVertexBuffer);
+
+	glEnableVertexAttribArray(vPositionLoc);
+	glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::cubeIndexBuffer);
+	glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::cubeNumIndex, GL_UNSIGNED_INT, NULL);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+
+	glDisableVertexAttribArray(vPositionLoc);
+
+	glBindBuffer(GL_ARRAY_BUFFER, NULL);
+
+	glUseProgram(NULL);
 }
 
 void ComponentMeshRenderer::OnInspector()
@@ -78,9 +110,5 @@ void ComponentMeshRenderer::OnInspector()
 
 		ImGui::AlignTextToFramePadding();
 		ImGui::Text(" UUID: %u", UUID);
-
-		
-
-
 	}
 }
