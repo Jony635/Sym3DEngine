@@ -1,6 +1,11 @@
 #pragma once
 
 #include "Module.h"
+#include "Component.h"
+
+#include <vector>
+
+class ComponentRenderer;
 
 class ModuleRenderer : public Module
 {
@@ -11,6 +16,10 @@ private:
 
 public:
 	inline const void* GetContext() const { return context; }
+
+	ComponentRenderer* AddRenderer(ComponentType type, GameObject* gameObject);
+	ComponentRenderer* AddRenderer(ComponentRenderer* renderer);
+	bool EraseRenderer(ComponentRenderer* renderer);
 
 public:
 	bool vsync = true;
@@ -25,5 +34,6 @@ public:
 
 private:
 	void* context = 0u;
+	std::vector<ComponentRenderer*> renderers;
 
 };

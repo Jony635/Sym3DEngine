@@ -1,5 +1,8 @@
 #include "ComponentMeshRenderer.h"
 #include "Glew/include/GL/glew.h"
+#include "ImGUI/include/imgui.h"
+
+#include <string>
 
 float ComponentMeshRenderer::cubeVertex[] = 
 {
@@ -40,7 +43,7 @@ uint ComponentMeshRenderer::cubeIndex[] =
 uint ComponentMeshRenderer::cubeVertexBuffer = 0u;
 uint ComponentMeshRenderer::cubeIndexBuffer = 0u;
 
-ComponentMeshRenderer::ComponentMeshRenderer(GameObject* gameObject) : ComponentRenderer(gameObject)
+ComponentMeshRenderer::ComponentMeshRenderer(GameObject* gameObject) : ComponentRenderer(gameObject, ComponentType::MESHRENDERER)
 {}
 
 void ComponentMeshRenderer::InitializeShapesData()
@@ -59,4 +62,25 @@ void ComponentMeshRenderer::InitializeShapesData()
 void ComponentMeshRenderer::Render()
 {
 	//TODO: USE PROGRAM, SET ATTRIBUTES, AND RESET USE PROGRAM
+}
+
+void ComponentMeshRenderer::OnInspector()
+{
+	if (ImGui::CollapsingHeader((std::string("Mesh Renderer##") + std::to_string(UUID)).data()))
+	{
+		if (ImGui::Checkbox((std::string("Active##") + std::to_string(UUID)).data(), &active))
+		{
+			active = !active;
+			ToggleActive();
+		}
+		
+		ImGui::SameLine();
+
+		ImGui::AlignTextToFramePadding();
+		ImGui::Text(" UUID: %u", UUID);
+
+		
+
+
+	}
 }

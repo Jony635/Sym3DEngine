@@ -1,6 +1,5 @@
+#include "Component.h"
 #include "ComponentRenderer.h"
 
-ComponentRenderer::ComponentRenderer(GameObject* gameObject) : Component(gameObject)
-{
-
-}
+ComponentRenderer::ComponentRenderer(GameObject* gameObject, ComponentType type) : Component(gameObject, type)
+{}

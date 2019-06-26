@@ -8,6 +8,7 @@
 #include "Component.h"
 
 class ComponentTransform;
+class ComponentRenderer;
 
 class GameObject
 {
@@ -46,6 +47,7 @@ public:
 
 	//Quick Accessors
 	ComponentTransform* transform = nullptr;
+	ComponentRenderer* renderer = nullptr;
 
 private:
 	std::string name = "GameObject";

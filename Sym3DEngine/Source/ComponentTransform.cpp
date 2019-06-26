@@ -4,7 +4,7 @@
 #include "ImGUI/include/imgui.h"
 #include <string>
 
-ComponentTransform::ComponentTransform(GameObject* gameObject) : Component(gameObject)
+ComponentTransform::ComponentTransform(GameObject* gameObject) : Component(gameObject, ComponentType::TRANSFORM)
 {
 	position = math::float3::zero;
 	rotation.SetFromAxisAngle({ 0,0,0 }, 0);

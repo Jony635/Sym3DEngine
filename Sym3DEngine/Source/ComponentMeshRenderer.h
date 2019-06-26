@@ -11,6 +11,7 @@ public:
 
 private:
 	void Render();
+	void OnInspector();
 
 private:
 	//CUBE DATA

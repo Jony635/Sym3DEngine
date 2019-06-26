@@ -2,7 +2,7 @@
 #include "ComponentCamera.h"
 #include "ComponentTransform.h"
 
-ComponentCamera::ComponentCamera(GameObject* gameObject) : Component(gameObject)
+ComponentCamera::ComponentCamera(GameObject* gameObject) : Component(gameObject, ComponentType::CAMERA)
 {
 	frustum.SetKind(math::FrustumProjectiveSpace::FrustumSpaceGL, math::FrustumHandedness::FrustumRightHanded);
 	frustum.SetViewPlaneDistances(near, far);

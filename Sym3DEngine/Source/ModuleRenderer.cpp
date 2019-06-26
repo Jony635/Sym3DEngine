@@ -156,7 +156,8 @@ bool ModuleRenderer::PostUpdate()
 	glClearColor(0.5f, 0.8f, 0.9f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	//TODO: ITERATE OVER ALL THE RENDERER COMPONENTS IN ORDER TO DRAW THEIR STUFF
+	for (ComponentRenderer* renderer : renderers)
+		renderer->Render();
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
@@ -167,4 +168,45 @@ bool ModuleRenderer::PostUpdate()
 	SDL_GL_SwapWindow((SDL_Window*)App->window->GetWindow());
 
 	return true;
+}
+
+ComponentRenderer* ModuleRenderer::AddRenderer(ComponentType type, GameObject* gameObject)
+{
+	ComponentRenderer* ret = nullptr;
+	switch (type)
+	{
+		case ComponentType::MESHRENDERER:
+		{
+			ret = new ComponentMeshRenderer(gameObject);
+			renderers.push_back(ret);
+			break;
+		}
+		case ComponentType::RENDERER2D:
+		{
+			break;
+		}
+	}
+	return ret;
+}
+
+ComponentRenderer* ModuleRenderer::AddRenderer(ComponentRenderer* renderer)
+{
+	if (!renderer)
+		return nullptr;
+
+	renderers.push_back(renderer);
+
+	return renderer;
+}
+
+bool ModuleRenderer::EraseRenderer(ComponentRenderer* renderer)
+{
+	std::vector<ComponentRenderer*>::iterator it = std::find(renderers.begin(), renderers.end(), renderer);
+	if (it != renderers.end())
+	{
+		renderers.erase(it);
+		return true;
+	}
+
+	return false;
 }
