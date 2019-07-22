@@ -23,6 +23,7 @@ private:
 		//OPENGL BUFFERS
 		static uint cubeVertexBuffer;
 		static uint cubeIndexBuffer;
+		static uint cubeVAO;
 
 
 	//---------------------------------

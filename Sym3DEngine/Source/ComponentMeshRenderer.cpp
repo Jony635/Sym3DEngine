@@ -3,7 +3,10 @@
 
 #include "ComponentMeshRenderer.h"
 
+#include "SDL/include/SDL.h"
 #include "Glew/include/GL/glew.h"
+#include "SDL/include/SDL_opengl.h"
+
 #include "ImGUI/include/imgui.h"
 #include "MathGeoLib/include/Math/float4x4.h"
 
@@ -47,18 +50,22 @@ uint ComponentMeshRenderer::cubeIndex[] =
 
 uint ComponentMeshRenderer::cubeVertexBuffer = 0u;
 uint ComponentMeshRenderer::cubeIndexBuffer = 0u;
+uint ComponentMeshRenderer::cubeVAO = 0u;
 
 ComponentMeshRenderer::ComponentMeshRenderer(GameObject* gameObject) : ComponentRenderer(gameObject, ComponentType::MESHRENDERER)
 {}
 
 void ComponentMeshRenderer::InitializeShapesData()
 {
-	glCreateBuffers(1, &cubeVertexBuffer);
+	glGenVertexArrays(1, &cubeVAO);
+	glBindVertexArray(cubeVAO);
+
+	glGenBuffers(1, &cubeVertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, cubeVertexBuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertex), cubeVertex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0u);
 
-	glCreateBuffers(1, &cubeIndexBuffer);
+	glGenBuffers(1, &cubeIndexBuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cubeIndexBuffer);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeIndex), cubeIndex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0u); 
@@ -66,16 +73,17 @@ void ComponentMeshRenderer::InitializeShapesData()
 
 void ComponentMeshRenderer::Render()
 {
+	glBindVertexArray(cubeVAO);
+
 	glUseProgram(App->renderer->shaderProgram);
 
-	/*uint pMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "projectionMatrix");
+	uint pMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "projectionMatrix");
 
 	glUniformMatrix4fv(pMatrixLoc, 1, GL_FALSE, math::float4x4::identity.ptr());
 
 	uint mvMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "modelViewMatrix");
 	glUniformMatrix4fv(mvMatrixLoc, 1, GL_FALSE, math::float4x4::identity.ptr());
-	*/
-
+	
 	//VERTEX POSITIONS
 
 	uint vPositionLoc = glGetAttribLocation(App->renderer->shaderProgram, "vertexPosition");
@@ -83,10 +91,13 @@ void ComponentMeshRenderer::Render()
 	glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::cubeVertexBuffer);
 
 	glEnableVertexAttribArray(vPositionLoc);
+
 	glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::cubeIndexBuffer);
+
 	glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::cubeNumIndex, GL_UNSIGNED_INT, NULL);
+
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
 
 	glDisableVertexAttribArray(vPositionLoc);
@@ -94,6 +105,16 @@ void ComponentMeshRenderer::Render()
 	glBindBuffer(GL_ARRAY_BUFFER, NULL);
 
 	glUseProgram(NULL);
+
+	glBindVertexArray(NULL);
+
+	GLenum error;
+	while (error = glGetError() != GL_NO_ERROR)
+	{
+		const char* errorString = (const char*)glewGetErrorString(error);
+
+		int a = 2;
+	}
 }
 
 void ComponentMeshRenderer::OnInspector()

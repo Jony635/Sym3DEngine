@@ -32,6 +32,8 @@ bool ModuleRenderer::Init()
 		return false;
 	}
 
+	SDL_GL_MakeCurrent((SDL_Window*)App->window->GetWindow(), context);
+
 	glewExperimental = GL_TRUE;
 
 	GLenum error = glewInit();
@@ -45,9 +47,6 @@ bool ModuleRenderer::Init()
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
-	glEnable(GL_COLOR_MATERIAL);
 
 	if (vsync)
 	{
@@ -58,8 +57,6 @@ bool ModuleRenderer::Init()
 		}
 	}
 
-	SDL_GL_MakeCurrent((SDL_Window*)App->window->GetWindow(), context);
-
 	//DEFAULT SHADER PROGRAM
 
 	ComponentMeshRenderer::InitializeShapesData();
@@ -67,8 +64,10 @@ bool ModuleRenderer::Init()
 
 	//VERTEX SHADER
 	uint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	const char* source = DEFAULT_VS;
-	glShaderSource(vertexShader, 1, &source, NULL);
+	std::string source = DEFAULT_VS;
+
+	const GLchar* src = (const GLchar*)source.c_str();
+	glShaderSource(vertexShader, 1, &src, NULL);
 	glCompileShader(vertexShader);
 
 	int  success;
@@ -85,7 +84,9 @@ bool ModuleRenderer::Init()
 	//FRAGMENT SHADER
 	uint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	source = DEFAULT_FS;
-	glShaderSource(fragmentShader, 1, &source, NULL);
+	src = source.c_str();
+
+	glShaderSource(fragmentShader, 1, &src, NULL);
 	glCompileShader(fragmentShader);
 	
 	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
@@ -109,6 +110,9 @@ bool ModuleRenderer::Init()
 		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog); //TODO: LOG THIS INTO THE CONSOLE.
 		return false;
 	}
+
+	glDetachShader(shaderProgram, vertexShader);
+	glDetachShader(shaderProgram, fragmentShader);
 
 	return true;
 }
