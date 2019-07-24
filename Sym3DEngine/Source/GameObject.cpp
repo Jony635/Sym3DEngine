@@ -106,6 +106,14 @@ void GameObject::SetParent(GameObject* newParent)
 		transform->UpdateMatricesFromGlobal();
 }
 
+void GameObject::OnTransformChanged()
+{
+	for (Component* component : components)
+	{
+		component->OnTransformChanged();
+	}
+}
+
 void GameObject::AddComponent(Component* component)
 {
 

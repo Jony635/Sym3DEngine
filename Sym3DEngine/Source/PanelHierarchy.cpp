@@ -43,7 +43,7 @@ void OnGameObjectReorder(GameObject* root, int childIndex)
 	ImGui::SetCursorScreenPos({cursorPos.x, cursorPos.y - 2});
 	ImGui::Dummy({ windowSize.x, 2 });
 	ImGui::SetCursorScreenPos(cursorPos);
-
+	
 	GameObject* child = root->childs[childIndex];
 
 	if (ImGui::BeginDragDropTarget())
@@ -77,8 +77,10 @@ void OnGameObjectReorder(GameObject* root, int childIndex)
 	}
 }
 
-void OnGameObjectDropped(GameObject* root, int childIndex)
+bool OnGameObjectDropped(GameObject* root, int childIndex)
 {
+	bool ret = false;
+
 	//ImVec2 cursorPos = ImGui::GetCursorScreenPos();
 	//ImGui::SetCursorScreenPos({ cursorPos.x, cursorPos.y - 15 });
 	//ImVec2 windowSize = ImGui::GetWindowSize();
@@ -92,6 +94,8 @@ void OnGameObjectDropped(GameObject* root, int childIndex)
 
 		if (payload != nullptr && ImGui::IsMouseReleased(0))
 		{
+			ret = true;
+
 			GameObject* child = root->childs[childIndex];
 			GameObject* dragged = *(GameObject**)payload->Data;
 			
@@ -120,6 +124,8 @@ void OnGameObjectDropped(GameObject* root, int childIndex)
 		}
 		ImGui::EndDragDropTarget();
 	}
+
+	return ret;
 }
 
 void OnHierarchyGameObjectDropped()
@@ -169,8 +175,8 @@ void PanelHierarchy::DrawGameObjectsRecursive(GameObject* root)
 			App->scene->GameObjectHierarchyClicked(gameObject);
 		}
 
-		OnGameObjectDropped(root, i);
-		OnGameObjectReorder(root, i);
+		if(!OnGameObjectDropped(root, i))
+			OnGameObjectReorder(root, i);
 
 		if(treeopened)
 		{

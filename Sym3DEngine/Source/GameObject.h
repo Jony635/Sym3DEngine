@@ -9,6 +9,7 @@
 
 class ComponentTransform;
 class ComponentRenderer;
+class ComponentCamera;
 
 class GameObject
 {
@@ -39,6 +40,8 @@ public:
 
 	void SetParent(GameObject* newParent);
 
+	void OnTransformChanged();
+
 public:
 	std::vector<GameObject*> childs;
 	std::vector<Component*> components;
@@ -48,6 +51,7 @@ public:
 	//Quick Accessors
 	ComponentTransform* transform = nullptr;
 	ComponentRenderer* renderer = nullptr;
+	ComponentCamera* camera = nullptr;
 
 private:
 	std::string name = "GameObject";

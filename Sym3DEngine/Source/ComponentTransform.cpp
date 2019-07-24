@@ -81,6 +81,8 @@ void ComponentTransform::UpdateMatricesFromLocal()
 		if (child->transform)
 			child->transform->UpdateMatricesFromLocal();
 	}
+
+	gameObject->OnTransformChanged();
 }
 
 void ComponentTransform::UpdateMatricesFromGlobal()
@@ -93,4 +95,6 @@ void ComponentTransform::UpdateMatricesFromGlobal()
 		if (child->transform)
 			child->transform->UpdateMatricesFromGlobal();
 	}
+
+	gameObject->OnTransformChanged();
 }

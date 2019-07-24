@@ -162,7 +162,8 @@ bool ModuleRenderer::PostUpdate()
 	glViewport(0, 0, 1920, 1080);
 
 	for (ComponentRenderer* renderer : renderers)
-		renderer->Render();
+		if (renderer->IsTreeActive())
+			renderer->Render();
 		
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 

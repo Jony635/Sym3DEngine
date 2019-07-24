@@ -19,6 +19,7 @@ public:
 	Component(GameObject* gameObject, ComponentType type);
 
 	virtual void OnInspector() {}
+	virtual void OnTransformChanged() {}
 
 public:
 	inline bool IsActive() const { return active; }
