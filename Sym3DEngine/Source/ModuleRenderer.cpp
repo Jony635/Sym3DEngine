@@ -18,6 +18,9 @@
 
 #include "DefaultShader.h"
 
+#include "GameObject.h"
+#include "ComponentCamera.h"
+
 bool ModuleRenderer::Init()
 {
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
@@ -119,6 +122,7 @@ bool ModuleRenderer::Init()
 
 bool ModuleRenderer::Start()
 {
+	//Create the FrameBuffer to render the scene in
 	glGenFramebuffers(1, &fbo);
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 
@@ -140,6 +144,11 @@ bool ModuleRenderer::Start()
 		return false;
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	//Create the editor camera
+	GameObject* cameraParent = new GameObject();
+	ComponentCamera::editorCamera = ComponentCamera::activeCamera = (ComponentCamera*)cameraParent->AddComponent(ComponentType::CAMERA);
+	ComponentCamera::editorCamera->isEditorCamera = true;
 
 	return true;
 }

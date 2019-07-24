@@ -3,8 +3,8 @@
 #define DEFAULT_VS																			\
 "#version 150 \n"																			\
 																							\
-"//uniform mat4 projectionMatrix;\n"                                                        \
-"//uniform mat4 modelViewMatrix;\n"															\
+"uniform mat4 projectionMatrix;\n"                                                        \
+"uniform mat4 modelViewMatrix;\n"															\
 "attribute vec3 vertexPosition;\n"															\
 																							\
 "void main()\n"																				\

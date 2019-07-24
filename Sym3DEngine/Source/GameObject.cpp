@@ -4,6 +4,7 @@
 
 #include "GameObject.h"
 #include "ComponentTransform.h"
+#include "ComponentCamera.h"
 
 #include "ImGUI/include/imgui.h"
 #include "ImGUI/include/imgui_stdlib.h"
@@ -68,6 +69,23 @@ Component* GameObject::AddComponent(ComponentType type)
 
 			this->renderer = renderer;
 			return (Component*)renderer;
+			break;
+		}
+
+		case ComponentType::CAMERA:
+		{
+			if (this->camera)
+			{
+				//TODO: LOG ERROR, ALREADY HAD ONE CAMERA
+				return nullptr;
+			}
+
+			ComponentCamera* camera = new ComponentCamera(this);
+			components.push_back(camera);
+
+			this->camera = camera;
+			return camera;
+
 			break;
 		}
 	}

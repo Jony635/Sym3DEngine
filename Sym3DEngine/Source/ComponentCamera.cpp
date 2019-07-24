@@ -2,6 +2,10 @@
 #include "ComponentCamera.h"
 #include "ComponentTransform.h"
 
+ComponentCamera* ComponentCamera::activeCamera = nullptr;
+ComponentCamera* ComponentCamera::editorCamera = nullptr;
+ComponentCamera* ComponentCamera::gameCamera = nullptr;
+
 ComponentCamera::ComponentCamera(GameObject* gameObject) : Component(gameObject, ComponentType::CAMERA)
 {
 	frustum.SetKind(math::FrustumProjectiveSpace::FrustumSpaceGL, math::FrustumHandedness::FrustumRightHanded);
@@ -23,6 +27,16 @@ void ComponentCamera::UpdateFrustum()
 		up = globalMat.TransformDir(math::float3(0, 1, 0));
 		front = globalMat.TransformDir(math::float3(0, 0, 1));
 
-		frustum.SetFrame(gameObject->transform->GetPosition(), front, up);
+		math::float3 globalPos, scale;
+		math::Quat rotate;
+
+		globalMat.Decompose(globalPos, rotate, scale);
+
+		frustum.SetFrame(globalPos, front, up);
 	}
+}
+
+void ComponentCamera::OnTransformChanged()
+{
+	UpdateFrustum();
 }

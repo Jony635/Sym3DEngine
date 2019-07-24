@@ -9,6 +9,17 @@ public:
 	ComponentCamera(GameObject* gameObject);
 
 	void UpdateFrustum();
+	void OnTransformChanged();
+
+	//TODO: GET VIEW MATRIX
+	//TODO: GET PROJECTION MATRIX
+
+public:
+	static ComponentCamera* activeCamera;
+	static ComponentCamera* editorCamera;
+	static ComponentCamera* gameCamera;
+
+	bool isEditorCamera = false;
 
 private:
 	math::Frustum frustum;
