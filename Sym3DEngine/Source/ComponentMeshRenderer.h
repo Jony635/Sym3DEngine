@@ -14,9 +14,12 @@ private:
 	void OnInspector();
 
 private:
+	bool useInternalShapes = true;
+	uint internalShapeID = 0;
+
 	//CUBE DATA
-	static float cubeVertex[8 * 3];
-	static unsigned int cubeIndex[12 * 3];
+	static float cubeVertex[];
+	static unsigned int cubeIndex[];
 	static const uint cubeNumVertex = 8u;
 	static const uint cubeNumIndex = 36u;
 
@@ -25,6 +28,16 @@ private:
 		static uint cubeIndexBuffer;
 		static uint cubeVAO;
 
+	//PYRAMID DATA
+		static float pyramidVertex[];
+		static unsigned int pyramidIndex[];
+		static const uint pyramidNumVertex = 5u;
+		static const uint pyramidNumIndex = 18u;
+
+		//OPENGL BUFFERS
+		static uint pyramidVertexBuffer;
+		static uint pyramidIndexBuffer;
+		static uint pyramidVAO;
 
 	//---------------------------------
 	//MORE STANDARD SHAPES

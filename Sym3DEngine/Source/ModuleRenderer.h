@@ -25,9 +25,9 @@ public:
 	bool vsync = true;
 
 	//Draw to texture stuff
-	uint FramebufferName = 0;
-	uint renderedTexture = 0;
-	uint depthrenderbuffer;
+	uint fbo = 0;
+	uint texColorBuffer = 0;
+	uint rbo;
 
 	//Shader stuff
 	uint shaderProgram = 0u;
