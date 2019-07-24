@@ -143,25 +143,32 @@ void ComponentMeshRenderer::Render()
 
 				//VERTEX POSITIONS
 
-				uint vPositionLoc = glGetAttribLocation(App->renderer->shaderProgram, "vertexPosition");
-				glEnableVertexAttribArray(vPositionLoc);
+				int vPositionLoc = glGetAttribLocation(App->renderer->shaderProgram, "vertexPosition");
 
-				glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::cubeVertexBuffer);
-				glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+				if (vPositionLoc != -1)
+				{
+					glEnableVertexAttribArray(vPositionLoc);
 
-				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::cubeIndexBuffer);
+					glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::cubeVertexBuffer);
+					glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
-				glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::cubeNumIndex, GL_UNSIGNED_INT, NULL);
+					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::cubeIndexBuffer);
 
-				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+					SendUniformsToShader();
 
-				glDisableVertexAttribArray(vPositionLoc);
+					glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::cubeNumIndex, GL_UNSIGNED_INT, NULL);
 
-				glBindBuffer(GL_ARRAY_BUFFER, NULL);
+					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+
+					glDisableVertexAttribArray(vPositionLoc);
+
+					glBindBuffer(GL_ARRAY_BUFFER, NULL);
+				}	
 
 				glUseProgram(NULL);
 
 				glBindVertexArray(NULL);
+				
 				break;
 			}
 
@@ -175,30 +182,33 @@ void ComponentMeshRenderer::Render()
 
 				//VERTEX POSITIONS
 				uint vPositionLoc = glGetAttribLocation(App->renderer->shaderProgram, "vertexPosition");
-				glEnableVertexAttribArray(vPositionLoc);
+				if (vPositionLoc != -1)
+				{
+					glEnableVertexAttribArray(vPositionLoc);
 
-				glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::pyramidVertexBuffer);
-				glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+					glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::pyramidVertexBuffer);
+					glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
-				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::pyramidIndexBuffer);
+					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::pyramidIndexBuffer);
 
-				glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::pyramidNumIndex, GL_UNSIGNED_INT, NULL);
+					SendUniformsToShader();
 
-				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+					glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::pyramidNumIndex, GL_UNSIGNED_INT, NULL);
 
-				glDisableVertexAttribArray(vPositionLoc);
+					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
 
-				glBindBuffer(GL_ARRAY_BUFFER, NULL);
+					glDisableVertexAttribArray(vPositionLoc);
 
+					glBindBuffer(GL_ARRAY_BUFFER, NULL);
+				}
+				
 				glUseProgram(NULL);
 
 				glBindVertexArray(NULL);
 
 				break;
 			}
-		}
-
-	
+		}	
 }
 
 void ComponentMeshRenderer::OnInspector()
@@ -215,6 +225,15 @@ void ComponentMeshRenderer::OnInspector()
 
 		ImGui::AlignTextToFramePadding();
 		ImGui::Text(" UUID: %u", UUID);
+
+		ImGui::NewLine();
+
+		ImGui::AlignTextToFramePadding();
+		ImGui::Text("Color: "); ImGui::SameLine(); 
+
+		ImGui::ColorEdit4((std::string("Color##") + std::to_string(UUID)).data(), color);
+
+		ImGui::NewLine();
 
 		ImGui::Checkbox((std::string("Use Internal Shapes##") + std::to_string(UUID)).data(), &useInternalShapes);
 
@@ -249,5 +268,15 @@ void ComponentMeshRenderer::OnInspector()
 		{
 			ImGui::TextColored({ 1,0,0,1 }, "CUSTOM SHAPES NOT IMPLEMENTED FOR NOW");
 		}
+	}
+}
+
+void ComponentMeshRenderer::SendUniformsToShader()
+{
+	//Color uniform
+	int colorLoc = glGetUniformLocation(App->renderer->shaderProgram, "color");
+	if(colorLoc != -1)
+	{
+		glUniform4fv(colorLoc, 1, color);
 	}
 }

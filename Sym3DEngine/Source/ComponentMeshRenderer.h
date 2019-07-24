@@ -13,7 +13,12 @@ private:
 	void Render();
 	void OnInspector();
 
+	void SendUniformsToShader();
+
 private:
+
+	float color[4];
+
 	bool useInternalShapes = true;
 	uint internalShapeID = 0;
 
