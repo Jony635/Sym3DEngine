@@ -11,8 +11,8 @@ public:
 	void UpdateFrustum();
 	void OnTransformChanged();
 
-	//TODO: GET VIEW MATRIX
-	//TODO: GET PROJECTION MATRIX
+	math::float4x4 GetViewMatrix() const;
+	math::float4x4 GetProjectionMatrix() const;
 
 public:
 	static ComponentCamera* activeCamera;

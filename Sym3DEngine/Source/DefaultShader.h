@@ -9,8 +9,7 @@
 																							\
 "void main()\n"																				\
 "{\n"																						\
-	"//gl_Position = projectionMatrix * modelViewMatrix * vec4(vertexPosition, 1.0);\n"		\
-	"gl_Position = vec4(vertexPosition, 1.0);\n"											\
+	"gl_Position = projectionMatrix * modelViewMatrix * vec4(vertexPosition, 1.0);\n"		\
 "}\n"																						
 																							
 #define DEFAULT_FS																			\

@@ -153,6 +153,16 @@ bool ModuleRenderer::Start()
 	return true;
 }
 
+bool ModuleRenderer::Update()
+{
+	//TODO: Editor camera controls
+
+
+
+
+	return true;
+}
+
 bool ModuleRenderer::PostUpdate()
 {
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);

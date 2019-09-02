@@ -12,6 +12,7 @@ class ModuleRenderer : public Module
 private:
 	bool Init();
 	bool Start();
+	bool Update();
 	bool PostUpdate();
 
 public:

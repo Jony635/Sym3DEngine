@@ -1,7 +1,10 @@
 #include "Application.h"
 #include "ModuleRenderer.h"
 
+#include "GameObject.h"
+#include "ComponentTransform.h"
 #include "ComponentMeshRenderer.h"
+#include "ComponentCamera.h"
 
 #include "SDL/include/SDL.h"
 #include "Glew/include/GL/glew.h"
@@ -278,5 +281,24 @@ void ComponentMeshRenderer::SendUniformsToShader()
 	if(colorLoc != -1)
 	{
 		glUniform4fv(colorLoc, 1, color);
+	}
+
+	//ProjectionMatrix uniform
+	int pMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "projectionMatrix");
+	if (pMatrixLoc != -1)
+	{
+		math::float4x4 projectionMatrix = ComponentCamera::activeCamera->GetProjectionMatrix();
+		glUniformMatrix4fv(pMatrixLoc, 1, false, projectionMatrix.ptr());
+	}
+
+	//ModelViewMatrix uniform
+	int mvMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "modelViewMatrix");
+	if (mvMatrixLoc != -1)
+	{
+		math::float4x4 viewMatrix = ComponentCamera::activeCamera->GetViewMatrix();
+		math::float4x4 modelMatrix = gameObject->transform->GetGlobalMatrix();
+		math::float4x4 MVMatrix = viewMatrix * modelMatrix;
+
+		glUniformMatrix4fv(mvMatrixLoc, 1, false, MVMatrix.ptr());
 	}
 }

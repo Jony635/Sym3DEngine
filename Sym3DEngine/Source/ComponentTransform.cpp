@@ -61,7 +61,7 @@ void ComponentTransform::OnInspector()
 		}
 
 		ImGui::Text("Scale: ");
-		if (ImGui::DragFloat3((std::string("##Scale") + std::to_string(UUID)).data(), scale.ptr()))
+		if (ImGui::DragFloat3((std::string("##Scale") + std::to_string(UUID)).data(), scale.ptr(), 0.01f))
 		{
 			UpdateMatricesFromLocal();
 		}

@@ -40,3 +40,13 @@ void ComponentCamera::OnTransformChanged()
 {
 	UpdateFrustum();
 }
+
+math::float4x4 ComponentCamera::GetViewMatrix() const
+{
+	return frustum.ViewMatrix();
+}
+
+math::float4x4 ComponentCamera::GetProjectionMatrix() const
+{
+	return frustum.ProjectionMatrix();
+}
