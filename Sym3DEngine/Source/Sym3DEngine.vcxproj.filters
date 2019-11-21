@@ -261,6 +261,9 @@
     <ClCompile Include="TextureImporter.cpp">
       <Filter>Archivos de recursos\Importers</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleTime.cpp">
+      <Filter>Archivos de recursos\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Application.h">
@@ -838,6 +841,9 @@
     </ClInclude>
     <ClInclude Include="STB\stb_image.h">
       <Filter>Archivos de origen\STB</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleTime.h">
+      <Filter>Archivos de recursos\Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

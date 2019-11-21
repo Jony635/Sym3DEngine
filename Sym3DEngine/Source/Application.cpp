@@ -6,6 +6,7 @@
 #include "ModuleInput.h"
 #include "ModuleImGUI.h"
 #include "ModuleScene.h"
+#include "ModuleTime.h"
 
 Application::Application()
 {
@@ -14,7 +15,9 @@ Application::Application()
 	input = new ModuleInput();
 	imgui = new ModuleImGUI();
 	scene = new ModuleScene();
+	time = new ModuleTime();
 
+	modules.push_back(time);
 	modules.push_back(input);
 	modules.push_back(window);
 	modules.push_back(scene);

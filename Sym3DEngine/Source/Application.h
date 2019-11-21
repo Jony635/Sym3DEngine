@@ -10,6 +10,7 @@ class ModuleRenderer;
 class ModuleInput;
 class ModuleImGUI;
 class ModuleScene;
+class ModuleTime;
 
 class Application
 {
@@ -42,6 +43,7 @@ public:
 	ModuleInput* input = nullptr;
 	ModuleImGUI* imgui = nullptr;
 	ModuleScene* scene = nullptr;
+	ModuleTime* time = nullptr;
 
 private:
 	AppState state;
