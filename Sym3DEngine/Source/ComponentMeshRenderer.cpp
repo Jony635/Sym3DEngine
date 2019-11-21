@@ -15,6 +15,12 @@
 
 #include <string>
 
+//TEMP
+#include "TextureImporter.h"
+#include "ResourceTexture.h"
+
+uint ComponentMeshRenderer::textureID = 0u;
+
 float ComponentMeshRenderer::cubeVertex[] = 
 {
 	// front
@@ -22,12 +28,36 @@ float ComponentMeshRenderer::cubeVertex[] =
 	 1.0, -1.0,  -1.0, //Bottom-right	1
 	 1.0,  1.0,  -1.0, //Top-right		2
 	-1.0,  1.0,  -1.0, //Top-left		3
-										
+							
+	//right
+	1.0, -1.0,  -1.0, //Bottom-right	1	4
+	1.0, -1.0,  1.0, //Bottom-right		5	5
+	1.0,  1.0,  1.0, //Top-right		6	6
+	1.0,  1.0,  -1.0, //Top-right		2	7
+
 	// back								
-	-1.0, -1.0,  1.0, //Bottom-left		4
-	 1.0, -1.0,  1.0, //Bottom-right	5
-	 1.0,  1.0,  1.0, //Top-right		6
-	-1.0,  1.0,  1.0, //Top-left		7
+	-1.0, -1.0,  1.0, //Bottom-left		4	8
+	 1.0, -1.0,  1.0, //Bottom-right	5	9
+	 1.0,  1.0,  1.0, //Top-right		6	10
+	-1.0,  1.0,  1.0, //Top-left		7	11
+
+	//left
+	-1.0, -1.0,  1.0, //Bottom-left		4	12
+	-1.0, -1.0,  -1.0, //Bottom-left	0	13
+	-1.0,  1.0,  -1.0, //Top-left		3	14
+	-1.0,  1.0,  1.0, //Top-left		7	15
+
+	//bottom
+	-1.0, -1.0,  1.0, //Bottom-left		4	16
+	1.0, -1.0,  1.0, //Bottom-right		5	17
+	1.0, -1.0,  -1.0, //Bottom-right	1	18
+	-1.0, -1.0,  -1.0, //Bottom-left	0	19
+
+	//top
+	-1.0,  1.0,  -1.0, //Top-left		3	20
+	1.0,  1.0,  -1.0, //Top-right		2	21
+	1.0,  1.0,  1.0, //Top-right		6	22
+	-1.0,  1.0,  1.0 //Top-left			7	23
 };
 
 uint ComponentMeshRenderer::cubeIndex[] =
@@ -36,25 +66,59 @@ uint ComponentMeshRenderer::cubeIndex[] =
 	0, 1, 2,
 	2, 3, 0,
 	// right
-	1, 5, 6,
-	6, 2, 1,
+	4, 5, 6,
+	6, 7, 4,
 	// back
-	7, 6, 5,
-	5, 4, 7,
+	9, 10, 11,
+	11, 8, 9,
 	// left
-	4, 0, 3,
-	3, 7, 4,
+	12, 13, 14,
+	14, 15, 12,
 	// bottom
-	4, 5, 1,
-	1, 0, 4,
+	16, 17, 18,
+	18, 19, 16,
 	// top
-	3, 2, 6,
-	6, 7, 3
+	20, 21, 22,
+	22, 23, 20
 };
 
 uint ComponentMeshRenderer::cubeVertexBuffer = 0u;
 uint ComponentMeshRenderer::cubeIndexBuffer = 0u;
 uint ComponentMeshRenderer::cubeVAO = 0u;
+uint ComponentMeshRenderer::cubeTexCoordsBuffer = 0u;
+
+float ComponentMeshRenderer::cubeTexCoords[] =
+{
+	0.0f, 0.0f,
+	1.0f, 0.0f,
+	1.0f, 1.0f,
+	0.0f, 1.0f,
+
+	0.0f, 0.0f,
+	1.0f, 0.0f,
+	1.0f, 1.0f,
+	0.0f, 1.0f,
+
+	1.0f, 0.0f,
+	0.0f, 0.0f,
+	0.0f, 1.0f,
+	1.0f, 1.0f,
+
+	0.0f, 0.0f,
+	1.0f, 0.0f,
+	1.0f, 1.0f,
+	0.0f, 1.0f,
+
+	0.0f, 0.0f,
+	1.0f, 0.0f,
+	1.0f, 1.0f,
+	0.0f, 1.0f,
+
+	0.0f, 0.0f,
+	1.0f, 0.0f,
+	1.0f, 1.0f,
+	0.0f, 1.0f
+};
 
 float ComponentMeshRenderer::pyramidVertex[] =
 {
@@ -110,6 +174,11 @@ void ComponentMeshRenderer::InitializeShapesData()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeIndex), cubeIndex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0u); 
 	
+	glGenBuffers(1, &cubeTexCoordsBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, cubeTexCoordsBuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(cubeTexCoords), cubeTexCoords, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0u);
+
 	//PYRAMID:
 	glGenVertexArrays(1, &pyramidVAO);
 	glBindVertexArray(pyramidVAO);
@@ -124,6 +193,10 @@ void ComponentMeshRenderer::InitializeShapesData()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(pyramidIndex), pyramidIndex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0u);
 
+	//TEMP
+	ResourceTexture* texture = TextureImporter::ImportTexture("texture.png");
+	texture->LoadOnMemory();
+	textureID = texture->getID();
 }
 
 void ComponentMeshRenderer::Render()
@@ -137,23 +210,26 @@ void ComponentMeshRenderer::Render()
 
 				glUseProgram(App->renderer->shaderProgram);
 
-				/*uint pMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "projectionMatrix");
-
-				glUniformMatrix4fv(pMatrixLoc, 1, GL_FALSE, math::float4x4::identity.ptr());
-
-				uint mvMatrixLoc = glGetUniformLocation(App->renderer->shaderProgram, "modelViewMatrix");
-				glUniformMatrix4fv(mvMatrixLoc, 1, GL_FALSE, math::float4x4::identity.ptr());*/
-
 				//VERTEX POSITIONS
 
 				int vPositionLoc = glGetAttribLocation(App->renderer->shaderProgram, "vertexPosition");
 
 				if (vPositionLoc != -1)
 				{
+					//Position attribute
 					glEnableVertexAttribArray(vPositionLoc);
 
 					glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::cubeVertexBuffer);
 					glVertexAttribPointer(vPositionLoc, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+					//TextureCoords attribute
+					int texCoordsLoc = glGetAttribLocation(App->renderer->shaderProgram, "aTexCoord");
+					if (texCoordsLoc != -1)
+					{
+						glEnableVertexAttribArray(texCoordsLoc);
+						glBindBuffer(GL_ARRAY_BUFFER, ComponentMeshRenderer::cubeTexCoordsBuffer);
+						glVertexAttribPointer(texCoordsLoc, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+					}			
 
 					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ComponentMeshRenderer::cubeIndexBuffer);
 
@@ -161,12 +237,16 @@ void ComponentMeshRenderer::Render()
 
 					glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::cubeNumIndex, GL_UNSIGNED_INT, NULL);
 
+					glBindTexture(GL_TEXTURE_2D, 0);
+
 					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+
+					glDisableVertexAttribArray(texCoordsLoc);
 
 					glDisableVertexAttribArray(vPositionLoc);
 
 					glBindBuffer(GL_ARRAY_BUFFER, NULL);
-				}	
+				}
 
 				glUseProgram(NULL);
 
@@ -197,6 +277,8 @@ void ComponentMeshRenderer::Render()
 					SendUniformsToShader();
 
 					glDrawElements(GL_TRIANGLES, ComponentMeshRenderer::pyramidNumIndex, GL_UNSIGNED_INT, NULL);
+
+					glBindTexture(GL_TEXTURE_2D, 0);
 
 					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
 
@@ -288,7 +370,9 @@ void ComponentMeshRenderer::SendUniformsToShader()
 	if (pMatrixLoc != -1)
 	{
 		math::float4x4 projectionMatrix = ComponentCamera::activeCamera->GetProjectionMatrix();
-		glUniformMatrix4fv(pMatrixLoc, 1, false, projectionMatrix.ptr());
+		math::float4x4 pTransposedMatrix = projectionMatrix.Transposed();
+
+		glUniformMatrix4fv(pMatrixLoc, 1, false, pTransposedMatrix.ptr());
 	}
 
 	//ModelViewMatrix uniform
@@ -299,6 +383,11 @@ void ComponentMeshRenderer::SendUniformsToShader()
 		math::float4x4 modelMatrix = gameObject->transform->GetGlobalMatrix();
 		math::float4x4 MVMatrix = viewMatrix * modelMatrix;
 
-		glUniformMatrix4fv(mvMatrixLoc, 1, false, MVMatrix.ptr());
+		math::float4x4 mvTransposed = MVMatrix.Transposed();
+
+		glUniformMatrix4fv(mvMatrixLoc, 1, false, mvTransposed.ptr());
 	}
+
+	//Textures
+	glBindTexture(GL_TEXTURE_2D, textureID);
 }

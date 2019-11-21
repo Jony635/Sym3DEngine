@@ -17,7 +17,10 @@ private:
 
 private:
 
-	float color[4];
+	//TEMP
+	static uint textureID;
+
+	float color[4] = {1,1,1,1};
 
 	bool useInternalShapes = true;
 	uint internalShapeID = 0;
@@ -27,11 +30,13 @@ private:
 	static unsigned int cubeIndex[];
 	static const uint cubeNumVertex = 8u;
 	static const uint cubeNumIndex = 36u;
+	static float cubeTexCoords[];
 
 		//OPENGL BUFFERS
 		static uint cubeVertexBuffer;
 		static uint cubeIndexBuffer;
 		static uint cubeVAO;
+		static uint cubeTexCoordsBuffer;
 
 	//PYRAMID DATA
 		static float pyramidVertex[];

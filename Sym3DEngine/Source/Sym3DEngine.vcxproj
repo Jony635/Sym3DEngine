@@ -79,11 +79,15 @@
     <ClCompile Include="MathGeoLib\include\Math\TransformOps.cpp" />
     <ClCompile Include="MathGeoLib\include\Time\Clock.cpp" />
     <ClCompile Include="ModuleImGUI.cpp" />
+    <ClCompile Include="ModuleResourceManager.cpp" />
     <ClCompile Include="ModuleScene.cpp" />
+    <ClCompile Include="TextureImporter.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="PanelHierarchy.cpp" />
     <ClCompile Include="PanelInspector.cpp" />
     <ClCompile Include="PanelScene.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceTexture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Application.h" />
@@ -190,6 +194,7 @@
     <ClInclude Include="ImGUI\include\imstb_rectpack.h" />
     <ClInclude Include="ImGUI\include\imstb_textedit.h" />
     <ClInclude Include="ImGUI\include\imstb_truetype.h" />
+    <ClInclude Include="Importer.h" />
     <ClInclude Include="MathGeoLib\include\Algorithm\GJK.h" />
     <ClInclude Include="MathGeoLib\include\Algorithm\GJK2D.h" />
     <ClInclude Include="MathGeoLib\include\Algorithm\Random\LCG.h" />
@@ -265,12 +270,17 @@
     <ClInclude Include="MathGeoLib\include\Math\vec2d.h" />
     <ClInclude Include="MathGeoLib\include\Time\Clock.h" />
     <ClInclude Include="ModuleImGUI.h" />
+    <ClInclude Include="ModuleResourceManager.h" />
     <ClInclude Include="ModuleScene.h" />
+    <ClInclude Include="STB\stb_image.h" />
+    <ClInclude Include="TextureImporter.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="PanelHierarchy.h" />
     <ClInclude Include="PanelInspector.h" />
     <ClInclude Include="PanelScene.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceTexture.h" />
     <ClInclude Include="Selection.h" />
   </ItemGroup>
   <ItemGroup>

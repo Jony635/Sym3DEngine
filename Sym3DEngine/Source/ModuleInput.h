@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Module.h"
 
+#include "SDL/include/SDL.h"
+
 enum KeyState
 {
 	KEY_IDLE,

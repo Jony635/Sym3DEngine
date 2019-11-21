@@ -26,9 +26,12 @@ public:
 	bool IsTreeActive() const;
 	inline void ToggleActive() { active = !active; }
 
+public:
+	GameObject* gameObject = nullptr;
+
 protected:
 	bool active = true;
 	ComponentType type = ComponentType::NO_TYPE;
 	uint UUID = 0u;
-	GameObject* gameObject = nullptr;
+
 };

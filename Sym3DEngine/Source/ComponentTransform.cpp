@@ -36,7 +36,7 @@ void ComponentTransform::OnInspector()
 		ImGui::NewLine();
 
 		ImGui::Text("Position: ");
-		if (ImGui::DragFloat3((std::string("##Position") + std::to_string(UUID)).data(), position.ptr()))
+		if (ImGui::DragFloat3((std::string("##Position") + std::to_string(UUID)).data(), position.ptr(), 0.01f))
 		{
 			UpdateMatricesFromLocal();
 		}
@@ -97,4 +97,18 @@ void ComponentTransform::UpdateMatricesFromGlobal()
 	}
 
 	gameObject->OnTransformChanged();
+}
+
+void ComponentTransform::Move(math::float3 distance)
+{
+	this->position += distance;
+
+	UpdateMatricesFromLocal();
+}
+
+void ComponentTransform::MoveTo(math::float3 position)
+{
+	this->position = position;
+
+	UpdateMatricesFromLocal();
 }

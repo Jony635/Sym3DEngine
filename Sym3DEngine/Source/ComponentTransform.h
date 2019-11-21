@@ -19,6 +19,9 @@ public:
 	inline math::Quat GetRotation() const { return rotation; }
 	inline math::float3 GetScale() const { return scale; }
 
+	void Move(math::float3 distance);
+	void MoveTo(math::float3 position);
+
 	inline math::float4x4 GetGlobalMatrix() const { return globalMatrix; }
 
 protected:

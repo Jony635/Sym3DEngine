@@ -3,8 +3,6 @@
 #include "ModuleInput.h"
 #include "GameObject.h"
 
-#include "SDL/include/SDL.h"
-
 ModuleScene::ModuleScene(bool createRoot)
 {
 	if(createRoot)

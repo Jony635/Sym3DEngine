@@ -1,3 +1,7 @@
+#include "Application.h"
+
+#include "ModuleInput.h"
+
 #include "GameObject.h"
 #include "ComponentCamera.h"
 #include "ComponentTransform.h"
@@ -8,7 +12,8 @@ ComponentCamera* ComponentCamera::gameCamera = nullptr;
 
 ComponentCamera::ComponentCamera(GameObject* gameObject) : Component(gameObject, ComponentType::CAMERA)
 {
-	frustum.SetKind(math::FrustumProjectiveSpace::FrustumSpaceGL, math::FrustumHandedness::FrustumRightHanded);
+	frustum.SetKind(math::FrustumProjectiveSpace::FrustumSpaceGL, math::FrustumHandedness::FrustumLeftHanded);
+
 	frustum.SetViewPlaneDistances(near, far);
 
 	//TODO: GET THE ASPECT RATIO FROM IMGUI WINDOW / SDL
@@ -24,7 +29,7 @@ void ComponentCamera::UpdateFrustum()
 		math::float4x4 globalMat = gameObject->transform->GetGlobalMatrix();
 
 		math::float3 up, front;
-		up = globalMat.TransformDir(math::float3(0, 1, 0));
+		up = globalMat.TransformDir(math::float3(0, -1, 0));
 		front = globalMat.TransformDir(math::float3(0, 0, 1));
 
 		math::float3 globalPos, scale;

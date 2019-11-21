@@ -43,6 +43,15 @@
     <Filter Include="Archivos de recursos\Shaders">
       <UniqueIdentifier>{b7221750-8c62-4047-a7e5-35d08fa68265}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Resources">
+      <UniqueIdentifier>{f366f92c-3765-42ae-98e0-faf9de4f9010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Importers">
+      <UniqueIdentifier>{f853a33e-e556-4c1f-9b21-f3bbc33a076c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\STB">
+      <UniqueIdentifier>{512fc67b-d8de-4f7c-b212-a80949989d6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
@@ -239,6 +248,18 @@
     </ClCompile>
     <ClCompile Include="ComponentMeshRenderer.cpp">
       <Filter>Archivos de recursos\GameObject System\Components\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleResourceManager.cpp">
+      <Filter>Archivos de recursos\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Archivos de recursos\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceTexture.cpp">
+      <Filter>Archivos de recursos\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureImporter.cpp">
+      <Filter>Archivos de recursos\Importers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -799,6 +820,24 @@
     </ClInclude>
     <ClInclude Include="ComponentMeshRenderer.h">
       <Filter>Archivos de recursos\GameObject System\Components\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleResourceManager.h">
+      <Filter>Archivos de recursos\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Archivos de recursos\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceTexture.h">
+      <Filter>Archivos de recursos\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureImporter.h">
+      <Filter>Archivos de recursos\Importers</Filter>
+    </ClInclude>
+    <ClInclude Include="Importer.h">
+      <Filter>Archivos de recursos\Importers</Filter>
+    </ClInclude>
+    <ClInclude Include="STB\stb_image.h">
+      <Filter>Archivos de origen\STB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

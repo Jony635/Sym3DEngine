@@ -2,7 +2,10 @@
 #include "ModuleWindow.h"
 #include "ModuleRenderer.h"
 #include "ModuleImGUI.h"
+#include "ModuleInput.h"
 
+#include "GameObject.h"
+#include "ComponentTransform.h"
 #include "ComponentMeshRenderer.h"
 
 #include "SDL/include/SDL.h"
@@ -47,9 +50,6 @@ bool ModuleRenderer::Init()
 	}
 
 	glClearColor(0.f, 0.f, 0.f, 1.0f);
-
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
 
 	if (vsync)
 	{
@@ -150,6 +150,8 @@ bool ModuleRenderer::Start()
 	ComponentCamera::editorCamera = ComponentCamera::activeCamera = (ComponentCamera*)cameraParent->AddComponent(ComponentType::CAMERA);
 	ComponentCamera::editorCamera->isEditorCamera = true;
 
+	ComponentCamera::editorCamera->gameObject->transform->Move({ .0f, .0f, -1.5f });
+
 	return true;
 }
 
@@ -157,6 +159,25 @@ bool ModuleRenderer::Update()
 {
 	//TODO: Editor camera controls
 
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_A) == KeyState::KEY_DOWN)
+	{
+		ComponentCamera::editorCamera->gameObject->transform->Move({ -1,0,0 });
+	}
+
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_D) == KeyState::KEY_DOWN)
+	{
+		ComponentCamera::editorCamera->gameObject->transform->Move({ 1,0,0 });
+	}
+
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_W) == KeyState::KEY_DOWN)
+	{
+		ComponentCamera::editorCamera->gameObject->transform->Move({ 0,1,0 });
+	}
+
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_S) == KeyState::KEY_DOWN)
+	{
+		ComponentCamera::editorCamera->gameObject->transform->Move({ 0,-1,0 });
+	}
 
 
 
@@ -176,7 +197,7 @@ bool ModuleRenderer::PostUpdate()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
+	glDisable(GL_CULL_FACE);
 
 	glViewport(0, 0, 1920, 1080);
 

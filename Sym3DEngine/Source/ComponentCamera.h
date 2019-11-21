@@ -24,6 +24,6 @@ public:
 private:
 	math::Frustum frustum;
 
-	float near = 0.3f, far = 3000.0f;
+	float near = 0.01f, far = 3000.0f;
 	float verticalFOV = 60.0f;
 };

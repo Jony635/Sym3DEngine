@@ -2,8 +2,6 @@
 #include "ModuleInput.h"
 #include "ModuleImGUI.h"
 
-#include "SDL/include/SDL.h"
-
 KeyState ModuleInput::GetKey(uint key)
 {
 	return keyboardState[key];
