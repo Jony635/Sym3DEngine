@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "ModuleTime.h"
 #include "ModuleWindow.h"
 #include "ModuleRenderer.h"
 #include "ModuleImGUI.h"
@@ -159,24 +160,31 @@ bool ModuleRenderer::Update()
 {
 	//TODO: Editor camera controls
 
-	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_A) == KeyState::KEY_DOWN)
+	float dt = App->time->GetDt();
+
+	float cameraSpeed = 2.0f;
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_LSHIFT) == KeyState::KEY_REPEAT)
+		cameraSpeed *= 2;
+
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_A) == KeyState::KEY_REPEAT)
 	{
-		ComponentCamera::editorCamera->gameObject->transform->Move({ -1,0,0 });
+		
+		ComponentCamera::editorCamera->gameObject->transform->Move({ -cameraSpeed * dt, 0, 0 });
 	}
 
-	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_D) == KeyState::KEY_DOWN)
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_D) == KeyState::KEY_REPEAT)
 	{
-		ComponentCamera::editorCamera->gameObject->transform->Move({ 1,0,0 });
+		ComponentCamera::editorCamera->gameObject->transform->Move({ cameraSpeed * dt, 0, 0 });
 	}
 
-	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_W) == KeyState::KEY_DOWN)
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_W) == KeyState::KEY_REPEAT)
 	{
-		ComponentCamera::editorCamera->gameObject->transform->Move({ 0,1,0 });
+		ComponentCamera::editorCamera->gameObject->transform->Move({ 0, cameraSpeed * dt, 0 });
 	}
 
-	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_S) == KeyState::KEY_DOWN)
+	if (App->input->GetKey(SDL_Scancode::SDL_SCANCODE_S) == KeyState::KEY_REPEAT)
 	{
-		ComponentCamera::editorCamera->gameObject->transform->Move({ 0,-1,0 });
+		ComponentCamera::editorCamera->gameObject->transform->Move({ 0, -cameraSpeed * dt, 0 });
 	}
 
 

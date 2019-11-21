@@ -12,6 +12,9 @@ public:
 	bool Update();
 	bool PostUpdate();
 
+public:
+	inline float GetDt() const { return dt; }
+
 private:
 
 	float lastFrameMS = 0.0f;
